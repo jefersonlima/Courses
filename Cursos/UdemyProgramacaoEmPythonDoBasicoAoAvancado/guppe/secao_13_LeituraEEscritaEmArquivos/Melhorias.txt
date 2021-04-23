@@ -1,0 +1,9 @@
+MOBILE ATENDIMENTOS
+--conexao com o banco
+	criar um servidor(VM) para poder acessar o banco(ISS)
+
+definições
+	check box com opções dos atendimentos possiveis
+	apos selecionado sempre haver uma consulta antes de mostrar as opções de correção
+	quando marcada um opção todas as outra ficam inacessiveis(ou seja só é possivel fazer uma coisa por vez)
+	ter casos especificos que podem ser feito determinada coisa

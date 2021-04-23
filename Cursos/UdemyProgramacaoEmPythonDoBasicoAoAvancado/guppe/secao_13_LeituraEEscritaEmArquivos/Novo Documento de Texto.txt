@@ -1,0 +1,22 @@
+"""
+Modo de Abertura de Arquivo
+
+#  r -> Abre para leitura - padrão
+#  w -> Abre para escrita - sobrescreve caso o arquivo já exista
+#  x -> Abre para escrita somente se o arquivo não existir. Caso o arquivo exista, gera FileExistsError
+#  a -> Abre para escrita, adicionando o conteúdo ao final do arquivo.
+
+#  OBS: Abrimos no modo 'a' -> append, se o arquivo não existir será criado. Caso exista, o novo conteúdo
+será adicionado ao final.
+
+#  http://docs.python.org/3/library/functions.html#open
+
+#  Exemplo x
+
+try:
+    with open('testando.txt', mode='w') as arquivo:
+        arquivo.write('Teste de conteúdo.\n')
+except (FileExistsError, SyntaxError):
+    print('Arquivo já existe!')
+
+"""
