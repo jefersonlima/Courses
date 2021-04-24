@@ -12,4 +12,5 @@ function converteMoeda(valor){
     return 'Valor real: ' + valor + '\nValor apos Tratamento: R$' + resultado.replace('.', ',')
 }
 
+console.log(converteMoeda(0.30000000000000004))
 console.log(converteMoeda(Math.random()))
