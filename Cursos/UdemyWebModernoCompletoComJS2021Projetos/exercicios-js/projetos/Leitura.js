@@ -12,6 +12,7 @@ function imprimir(){
             }else{
                 //decobrir como parar o setInterval
                 clearInterval(null)
+                console.log('decobrir como parar o setInterval')
             }
         }.bind(this), 1000)
 }
