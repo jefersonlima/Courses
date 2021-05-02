@@ -14,8 +14,8 @@ function imprimir(){
                 clearInterval(null)
                 console.log('decobrir como parar o setInterval')
             }
-        }.bind(this), 1000)
+        }.bind(this), 1000) //1000 500 350
 }
 //a ideia é pegar um arquivo de texto ou pdf como entrada
-let textoTeste = 'Se o separator contiver vários caracteres, toda a sequência de caracteres deve ser encontrada para ser dividida.'
+let textoTeste = 'Por ser rica em água, potássio e magnésio, a melancia contribui para a manutenção de uma pressão arterial normal. Além disso, o licopeno também ajuda a reduzir a pressão arterial e o colesterol, assim como evitar os a oxidação do colesterol nas artérias'
 leituraStatica(textoTeste)
