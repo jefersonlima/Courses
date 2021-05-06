@@ -1,0 +1,9 @@
+no TERMINAL na pasta do Projeto
+
+--Criar o arquivo package.json
+npm init -y
+
+--express e body-parser
+npm i --save express@4.16.3 body-parser@1.18.2 -E
+
+node server.js
