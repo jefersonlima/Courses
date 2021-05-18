@@ -1,19 +1,20 @@
 package ExecicioComInterface1705;
 
-public final class ElectriBike extends Bike implements Electric {
+public class LawnMower extends Vehicle implements Electric {
 
-	public ElectriBike(String nome) {
+	public LawnMower(String nome) {
 		super(nome);
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
 	public void start() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void maxWeight() {
+	public void drive() {
 		// TODO Auto-generated method stub
 		
 	}

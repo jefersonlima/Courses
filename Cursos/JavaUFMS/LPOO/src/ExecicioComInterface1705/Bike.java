@@ -1,6 +1,6 @@
 package ExecicioComInterface1705;
 
-public class Bike extends Vehicle{
+public class Bike extends Vehicle implements Load{
 
 	public Bike(String nome) {
 		super(nome);
@@ -9,6 +9,12 @@ public class Bike extends Vehicle{
 
 	@Override
 	public void drive() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void maxWeight() {
 		// TODO Auto-generated method stub
 		
 	}
