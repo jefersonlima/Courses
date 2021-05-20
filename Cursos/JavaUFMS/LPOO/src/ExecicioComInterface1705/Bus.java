@@ -2,8 +2,9 @@ package ExecicioComInterface1705;
 
 public class Bus extends Vehicle implements Fuel, Load, Passengers {
 
-	public Bus(String nome) {
-		super(nome);
+
+	public Bus(String nome, String cor, String marca, Double velocidade, int quantidadeRodas) {
+		super(nome, cor, marca, velocidade, quantidadeRodas);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -27,6 +28,12 @@ public class Bus extends Vehicle implements Fuel, Load, Passengers {
 
 	@Override
 	public void drive() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void abastecer() {
 		// TODO Auto-generated method stub
 		
 	}

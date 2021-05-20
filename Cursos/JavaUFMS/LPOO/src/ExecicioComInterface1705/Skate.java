@@ -2,8 +2,8 @@ package ExecicioComInterface1705;
 
 public class Skate extends Vehicle implements Passengers, Load {
 
-	public Skate(String nome) {
-		super(nome);
+	public Skate(String nome, String cor, String marca, Double velocidade, int quantidadeRodas) {
+		super(nome, cor, marca, velocidade, quantidadeRodas);
 		// TODO Auto-generated constructor stub
 	}
 

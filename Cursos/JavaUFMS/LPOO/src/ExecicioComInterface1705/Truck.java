@@ -2,8 +2,8 @@ package ExecicioComInterface1705;
 
 public class Truck extends Vehicle implements Fuel, Passengers, Load {
 
-	public Truck(String nome) {
-		super(nome);
+	public Truck(String nome, String cor, String marca, Double velocidade, int quantidadeRodas) {
+		super(nome, cor, marca, velocidade, quantidadeRodas);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -27,6 +27,12 @@ public class Truck extends Vehicle implements Fuel, Passengers, Load {
 
 	@Override
 	public void drive() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void abastecer() {
 		// TODO Auto-generated method stub
 		
 	}

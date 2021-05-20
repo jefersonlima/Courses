@@ -2,8 +2,8 @@ package ExecicioComInterface1705;
 
 public class Refrigerator extends Vehicle implements Fuel, Load, Passengers {
 
-	public Refrigerator(String nome) {
-		super(nome);
+	public Refrigerator(String nome, String cor, String marca, Double velocidade, int quantidadeRodas) {
+		super(nome, cor, marca, velocidade, quantidadeRodas);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -30,5 +30,12 @@ public class Refrigerator extends Vehicle implements Fuel, Load, Passengers {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void abastecer() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
