@@ -9,37 +9,26 @@ public class Bike extends Vehicle implements Load, Imprimir{
 		this.tipoBike = tipoBike;
 		this.pesoMaximo = pesoMaximo;
 	}
-
 	public String getTipoBike() {
 		return tipoBike;
 	}
-
-
 	public void setTipoBike(String tipoBike) {
 		this.tipoBike = tipoBike;
 	}
-
-
 	public double getPesoMaximo() {
 		return pesoMaximo;
 	}
-
 	public void setPesoMaximo(double pesoMaximo) {
 		this.pesoMaximo = pesoMaximo;
 	}
-
 	@Override
 	public void drive() {
-		System.out.println("Estou Andando de " + getNome());
-		
+		System.out.println("Estou Andando de " + getNome());	
 	}
-
 	@Override
 	public void maxWeight() {
-		System.out.println("Capacidade Máxima de Peso: " + getPesoMaximo());
-		
+		System.out.println("Capacidade Máxima de Peso: " + getPesoMaximo());	
 	}
-
 	@Override
 	public void imprimir() {
 		System.out.println(
@@ -51,8 +40,6 @@ public class Bike extends Vehicle implements Load, Imprimir{
 				"\nQuantidade de rodas: " + getQuantidadeRodas() +
 				"\nTipo de Bike: " + getTipoBike() +
 				"\nCapacidade Máxima de Peso: " + getPesoMaximo() + "kg\n"
-				);
-		
+				);	
 	}
-
 }
