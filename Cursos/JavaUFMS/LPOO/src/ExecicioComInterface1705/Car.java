@@ -1,34 +1,28 @@
 package ExecicioComInterface1705;
 
-public class Car extends Vehicle implements Motorized, Passengers, Load{
+public class Car extends AutoMotor implements Imprimir {
 
-	public Car(String nome, String cor, String marca, Double velocidade, int quantidadeRodas) {
-		super(nome, cor, marca, velocidade, quantidadeRodas);
+	public Car(String nome, String cor, String marca, Double velocidade, int quantidadeRodas, String tipoCombustivel,
+			int capacidadePassageiros, double capacidadeTanqueCombustivel) {
+		super(nome, cor, marca, velocidade, quantidadeRodas, tipoCombustivel, capacidadePassageiros,
+				capacidadeTanqueCombustivel);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void drive() {
-		// TODO Auto-generated method stub
+	public void imprimir() {
+		System.out.println(
+				"\n*DADOS DO CARRO*" +
+				"\nNome: " + getNome() +
+				"\nCor do carro: " + getCor() +
+				"\nMarca: " + getMarca() +
+				"\nVelocidade Max: " + getVelocidade() + "k/h" +
+				"\nQuantidade de rodas: " + getQuantidadeRodas() +
+				"\ntipo de Combustivel: " + getTipoCombustivel() +
+				"\nCapacidade Máxima de Passageiros: " + getCapacidadePassageiros() 
+				);	
 		
 	}
 
-	@Override
-	public void maxWeight() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void numberOfPassengers() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void start() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
