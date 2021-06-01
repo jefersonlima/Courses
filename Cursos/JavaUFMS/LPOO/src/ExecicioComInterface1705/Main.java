@@ -62,7 +62,7 @@ public class Main {
 		c1.start();
 		*/
 		
-		/*
+		
 		//Instanciando a Classe Bus
 		Bus b2 = new Bus("O 500 MDA 3736", "Prata", "Mercedes-Bens", 84.0, 6, "Diesel", 60, 1000.00);
 		
@@ -108,7 +108,7 @@ public class Main {
 		b2.deixaPassageiro();
 		System.out.println();
 		b2.start();
-		*/
+		
 		
 		/*
 		//Instanciando a classe Bike
