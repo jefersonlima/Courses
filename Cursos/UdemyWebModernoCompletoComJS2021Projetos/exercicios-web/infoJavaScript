@@ -13,3 +13,7 @@ https://unicode-table.com/pt
 json
 https://jsonlint.com/ //Valida Json
 https://www.w3schools.com/js/js_json_parse.asp
+
+nodemon
+parar o nodemon
+CTRL + c
