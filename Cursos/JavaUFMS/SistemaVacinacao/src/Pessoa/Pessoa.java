@@ -3,6 +3,7 @@ package Pessoa;
 import Endereco.Endereco;
 import java.util.InputMismatchException;
 import Interfaces.Verificavel;
+import Prioridade.Prioridade;
 
 
 public class Pessoa implements Verificavel{
@@ -18,16 +19,16 @@ public class Pessoa implements Verificavel{
 	private String raca; 
 	private boolean gestante;
 	
-	public Pessoa(String nome, Integer idade, char sexo, String cpf, String celular, int prioridade, Endereco endereco,
+	public Pessoa(String nome, Integer idade, char sexo, String cpf, String celular, Endereco endereco,
 			String profissao, boolean comorbidade, String raca, boolean gestante) {
 		super();
+		Prioridade prioridade = new Prioridade();
 		if (validarCPF(cpf) == true){
 			this.cpf = cpf;
 			this.nome = nome;
 			this.idade = idade;
 			this.sexo = sexo;			
 			this.celular = celular;
-			this.prioridade = prioridade;
 			this.endereco = endereco;
 			this.profissao = profissao;
 			this.comorbidade = comorbidade;
@@ -37,8 +38,9 @@ public class Pessoa implements Verificavel{
 			}else {
 				this.gestante = gestante;
 			}
+			this.prioridade = prioridade.verificaPrioridade(idade,profissao,comorbidade,raca,gestante);
 		} else {
-			solicitarNovo(nome, idade, sexo, cpf, celular, prioridade, endereco,
+			solicitarNovo(nome, idade, sexo, cpf, celular, endereco,
 					profissao, comorbidade, raca, gestante);
 		}
 	}
@@ -195,13 +197,10 @@ public class Pessoa implements Verificavel{
 		
 	}
 	
-	public void solicitarNovo(String nome, Integer idade, char sexo, String cpf, String celular, int prioridade, Endereco endereco,
-			String profissao, boolean comorbidade, String raca, boolean gestante) {
-		System.out.println("CPF: " + cpf + " Inválido!\n Digite Novamente");
-		
+	public void solicitarNovo(String nome, Integer idade, char sexo, String cpf, String celular, Endereco endereco, String profissao, boolean comorbidade, String raca, boolean gestante) {
+		System.out.println("CPF: " + cpf + " Invalido!\n Digite Novamente");
 		String novoCpf = "00409163163";
-		Pessoa pessoa = new Pessoa(nome, idade, sexo, novoCpf, celular, prioridade, endereco,
-				profissao, comorbidade, raca, gestante);
+		Pessoa pessoa = new Pessoa(nome, idade, sexo, novoCpf, celular, endereco, profissao, comorbidade, raca, gestante);
 	}
 
 	@Override
