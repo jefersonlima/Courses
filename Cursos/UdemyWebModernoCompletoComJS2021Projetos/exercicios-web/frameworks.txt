@@ -7,3 +7,6 @@ frameworks FrontEnd
 https://angularjs.org/
 https://angularjs.org/
 https://vuejs.org/
+
+Typora editor
+https://typora.io/
