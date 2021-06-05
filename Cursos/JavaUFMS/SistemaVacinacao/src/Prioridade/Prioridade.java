@@ -3,7 +3,18 @@ package Prioridade;
 import Pessoa.Pessoa;
 
 public class Prioridade {
-	//public int verificaPrioridade(int idade, String profissao, boolean comorbidade, String raca, boolean gestante) {
+	public int verificaPrioridade(int idade, String profissao, boolean comorbidade, String raca, boolean gestante) {
+		if ((idade >= 65) || (profissao == "Médico") || (profissao == "Enfermeiro") || (profissao == "Téc. Enfermagem") || (profissao == "Profissionais da Saúde")) {
+			return 1;
+		}else if ((idade >= 45) || (comorbidade == true) || (gestante == true) || (profissao == "Professor")) {
+			return 2;
+		}else if (raca == "Indíngena") {
+			return 3;
+		}else {
+			return 4;
+		}
+	}
+	
 	public static int verificaPrioridade(Pessoa pessoa) {
 		if ((pessoa.getIdade() >= 65) || (pessoa.getProfissao() == "Médico") || (pessoa.getProfissao() == "Enfermeiro") || (pessoa.getProfissao() == "Téc. Enfermagem") || (pessoa.getProfissao() == "Profissionais da Saúde")) {
 			return 1;
