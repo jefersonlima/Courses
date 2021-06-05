@@ -11,9 +11,8 @@ public class Vacina {
 	private Integer eficácia;
 	private String restricoes;
 	
-	public Vacina(int codVacina, String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficácia, String restricoes) {
+	public Vacina(String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficácia, String restricoes) {
 		super();
-		this.codVacina = codVacina;
 		this.nomeVacina = nomeVacina;
 		this.fabricante = fabricante;
 		this.duracao = duracao;
