@@ -2,6 +2,7 @@ package Vacina;
 
 public class Vacina {
 	
+	private int codVacina;
 	private String nomeVacina;
 	private String fabricante;
 	private Integer duracao;
@@ -10,8 +11,9 @@ public class Vacina {
 	private Integer eficácia;
 	private String restricoes;
 	
-	public Vacina(String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficácia, String restricoes) {
+	public Vacina(int codVacina, String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficácia, String restricoes) {
 		super();
+		this.codVacina = codVacina;
 		this.nomeVacina = nomeVacina;
 		this.fabricante = fabricante;
 		this.duracao = duracao;
@@ -19,6 +21,14 @@ public class Vacina {
 		this.dose = dose;
 		this.eficácia = eficácia;
 		this.restricoes = restricoes;
+	}
+
+	public int getCodVacina() {
+		return codVacina;
+	}
+
+	public void setCodVacina(int codVacina) {
+		this.codVacina = codVacina;
 	}
 
 	public String getNomeVacina() {
@@ -79,14 +89,15 @@ public class Vacina {
 
 	@Override
 	public String toString() {
-		return "\nVacina:" +
-				"\nnomeVacina: " + nomeVacina + 
-				"\nfabricante: " + fabricante + 
-				"\nduracao: " + duracao + 
-				"\nidadeMinima: " + idadeMinima + 
-				"\ndose: " + dose + 
-				"\neficácia: " + eficácia + 
-				"\nrestricoes: "	+ restricoes + "\n";
+		return "Vacina:" +
+				"\nCódigo Vacina: " + codVacina + 
+				"\nNome Vacina: " + nomeVacina + 
+				"\nFabricante: " + fabricante + 
+				"\nDuracao em Meses: " + duracao + 
+				"\nIdade Mínima: " + idadeMinima + 
+				"\nQuantidade de Doses: " + dose + 
+				"\nEficácia em %: " + eficácia + 
+				"\nRestrições: "	+ restricoes + "\n";
 	}	
 	
 	public String compareTo() {
