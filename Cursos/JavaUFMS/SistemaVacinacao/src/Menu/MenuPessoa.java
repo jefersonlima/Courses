@@ -1,7 +1,10 @@
 package Menu;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+
 import Pessoa.Pessoa;
 import Endereco.Endereco;
 
@@ -42,11 +45,29 @@ public class MenuPessoa{
 					// Deletar
 					System.out.println("Deletar");
 				break;
+				case 99:
+					populaPessoas();
+				break;
 				default:
 				break;
 			}
 		}
 }
+
+	private void populaPessoas() {
+		List<Endereco> endereco = new ArrayList<Endereco>();
+		// Endereços
+		endereco.add( new Endereco("Rua Ayrton Senna", 114, "Belo Jardim II", "Rio Branco","69908032"));
+		endereco.add( new Endereco("Rua Via Firenze", 192, "Jardim Vila Paradiso", "Indaiatuba","13331563"));
+		endereco.add( new Endereco("Servidão Nove de Novembro", 945, "Retiro", "Volta Redonda","27277212"));
+		endereco.add( new Endereco("Rua Quatro", 772, "Quintas Coloniais", "Contagem","32044480"));
+
+		// Pessoas
+		listPessoa.add(new Pessoa("Gilson Jose do Santos", 26, 'M', "87025384828", "(67) 99459-3797", endereco.get(0), "Designer", false, "Pardo", false));
+		listPessoa.add(new Pessoa("Jeferson", 65, 'M', "70429878109", "(83) 99940-1105", endereco.get(1), "Professor", false, "Preto", false));
+		listPessoa.add(new Pessoa("Henrique Theo Guilherme Rezende", 65, 'M', "54058291451", "(68)99164-9104", endereco.get(2), "Professor", true, "Branco", false));
+		listPessoa.add(new Pessoa("Isadora", 50, 'F', "45457869369", "(62) 98528-9986", endereco.get(3), "Professor", false, "Parda", true));
+	}
 
 	public void CadastrarPessoa(){
 		Pessoa pessoa;
@@ -70,20 +91,26 @@ public class MenuPessoa{
 		System.out.println("----- Cadastro de Endereço -----");
 		System.out.println("Informe a rua:");
 		String rua = in.nextLine();
+
 		System.out.println("Informe o número:");
 		int numero = in.nextInt();
 		in.nextLine();
+
 		System.out.println("Informe o Bairro:");
 		String bairro = in.nextLine();
+
 		System.out.println("Informe a cidade:");
 		String cidade = in.nextLine();
+
 		System.out.println("Informe o CEP: (campo pode ser em branco!)");
 		String cep = in.nextLine();
+
 		if(cep!=null){
 			endereco = new Endereco(rua, numero, bairro, cidade,cep);
 		}else{
 			endereco = new Endereco(rua, numero, bairro, cidade);
 		}
+
 		System.out.println("Informe a profissão:");
 		String profissao = in.nextLine();
 
@@ -95,6 +122,7 @@ public class MenuPessoa{
 		}else{
 			comorbidade = false;
 		}
+
 		in.nextLine();
 		System.out.println("Informe a raça que se identifica:");
 		String raca = in.nextLine();
@@ -105,6 +133,8 @@ public class MenuPessoa{
 			System.out.println("Informe se é gestante: True/False");
 			gestante = in.nextBoolean();
 		}
+
+		// Validar CPF antes de incerir na Lista
 		pessoa = new Pessoa();
 		pessoa.setCpf(cpf);
 		while(!pessoa.validarCPF(cpf)){
@@ -112,9 +142,9 @@ public class MenuPessoa{
 			cpf = in.next();
 			in.nextLine();
 		}
+
 		pessoa = new Pessoa(nome, idade, sexo, cpf, celular, endereco, profissao, comorbidade, raca, gestante);
 		listPessoa.add(pessoa);
-		
 		System.out.println("----- Pessoa cadastrada com sucesso! -----");
 	}
 

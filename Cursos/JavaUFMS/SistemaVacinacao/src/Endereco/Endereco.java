@@ -2,7 +2,7 @@ package Endereco;
 
 public class Endereco {
 	//Atributos
-	private int codEndereco = 0;
+	private static int codEndereco = 0;
 	private String rua;
 	private int numero;
 	private String bairro;
@@ -13,7 +13,7 @@ public class Endereco {
 	public Endereco(String rua, int numero, String bairro, String cidade, String cep) {
 		super();
 		//Melhorar isso para auto incrementar
-		this.codEndereco++;
+		codEndereco =+ 0001;
 		this.rua = rua;
 		this.numero = numero;
 		this.bairro = bairro;
@@ -24,7 +24,7 @@ public class Endereco {
 	public Endereco(String rua, int numero, String bairro, String cidade) {
 		super();
 		//Melhorar isso para auto incrementar
-		this.codEndereco++;
+		codEndereco =+ 0001;
 		this.rua = rua;
 		this.numero = numero;
 		this.bairro = bairro;
@@ -71,8 +71,7 @@ public class Endereco {
 
 	@Override
 	public String toString() {
-		return "\nCodEndere�o: " + getCodEndereco() + 
-				"\nAvenida / Rua / Travessa: " + getRua() +
+		return "\nAvenida / Rua / Travessa: " + getRua() +
 				"\nN�mero: " + getNumero() +
 				"\nBairro: " + getBairro() +
 				"\nCidade: " + getCidade() +

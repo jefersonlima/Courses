@@ -15,13 +15,13 @@ public class Main {
 		MenuPessoa pessoa = new MenuPessoa();
 		
 		System.out.println(
-				"Bem-vindo ao sistema de vacina!\n"
-				+ "Selecione uma op��o:\n"
-				+ "1 - Vacina\n"
-				+ "2 - Local\n"
-				+ "3 - Enfermeiros\n"
-				+ "4 - Pessoas\n"
-				+ "0 - Sair"
+			"Bem-vindo ao sistema de vacina!\n"
+			+ "Selecione uma op��o:\n"
+			+ "1 - Vacina\n"
+			+ "2 - Local\n"
+			+ "3 - Enfermeiros\n"
+			+ "4 - Pessoas\n"
+			+ "0 - Sair"
 		);
 		
 		int op = in.nextInt();
