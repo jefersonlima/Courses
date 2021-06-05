@@ -8,17 +8,17 @@ public class Vacina {
 	private Integer duracao;
 	private Integer idadeMinima;
 	private Integer dose;
-	private Integer eficácia;
+	private Integer eficacia;
 	private String restricoes;
 	
-	public Vacina(String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficácia, String restricoes) {
+	public Vacina(String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficacia, String restricoes) {
 		super();
 		this.nomeVacina = nomeVacina;
 		this.fabricante = fabricante;
 		this.duracao = duracao;
 		this.idadeMinima = idadeMinima;
 		this.dose = dose;
-		this.eficácia = eficácia;
+		this.eficacia = eficacia;
 		this.restricoes = restricoes;
 	}
 
@@ -70,12 +70,12 @@ public class Vacina {
 		this.dose = dose;
 	}
 
-	public Integer getEficácia() {
-		return eficácia;
+	public Integer getEficacia() {
+		return eficacia;
 	}
 
-	public void setEficácia(Integer eficácia) {
-		this.eficácia = eficácia;
+	public void setEficacia(Integer eficacia) {
+		this.eficacia = eficacia;
 	}
 
 	public String getRestricoes() {
@@ -95,11 +95,8 @@ public class Vacina {
 				"\nDuracao em Meses: " + duracao + 
 				"\nIdade Mínima: " + idadeMinima + 
 				"\nQuantidade de Doses: " + dose + 
-				"\nEficácia em %: " + eficácia + 
+				"\nEficácia em %: " + eficacia + 
 				"\nRestrições: "	+ restricoes + "\n";
 	}	
 	
-	public String compareTo() {
-		return "Método CompareTo Não implementado\n";
-	}
 }
