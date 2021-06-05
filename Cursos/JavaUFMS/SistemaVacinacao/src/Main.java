@@ -1,6 +1,7 @@
 //Lib
 import java.util.Scanner;
 
+import Menu.MenuPessoa;
 import Menu.MenuVacina;
 // Import class
 import Pessoa.Pessoa;
@@ -11,10 +12,11 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		MenuVacina vacina = new MenuVacina();
+		MenuPessoa pessoa = new MenuPessoa();
 		
 		System.out.println(
 				"Bem-vindo ao sistema de vacina!\n"
-				+ "Selecione uma opção:\n"
+				+ "Selecione uma opï¿½ï¿½o:\n"
 				+ "1 - Vacina\n"
 				+ "2 - Local\n"
 				+ "3 - Enfermeiros\n"
@@ -37,6 +39,7 @@ public class Main {
 		break;
 		case 4:
 			// Pessoas
+			pessoa.getMenuPessoa();
 		break;
 		default:
 			System.out.println("Obrigado por ultilizar nosso sistema!");

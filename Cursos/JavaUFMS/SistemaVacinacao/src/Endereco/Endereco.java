@@ -2,7 +2,7 @@ package Endereco;
 
 public class Endereco {
 	//Atributos
-	private int codEndereco;
+	private int codEndereco = 0;
 	private String rua;
 	private int numero;
 	private String bairro;
@@ -10,10 +10,10 @@ public class Endereco {
 	private String cep;
 	
 	// Contrutor Completo
-	public Endereco(int codEndereco, String rua, int numero, String bairro, String cidade, String cep) {
+	public Endereco(String rua, int numero, String bairro, String cidade, String cep) {
 		super();
 		//Melhorar isso para auto incrementar
-		this.codEndereco = codEndereco;
+		this.codEndereco++;
 		this.rua = rua;
 		this.numero = numero;
 		this.bairro = bairro;
@@ -21,10 +21,10 @@ public class Endereco {
 		this.cep = cep;
 	}
 	// Construtor sem Cep
-	public Endereco(int codEndereco, String rua, int numero, String bairro, String cidade) {
+	public Endereco(String rua, int numero, String bairro, String cidade) {
 		super();
 		//Melhorar isso para auto incrementar
-		this.codEndereco = codEndereco;
+		this.codEndereco++;
 		this.rua = rua;
 		this.numero = numero;
 		this.bairro = bairro;
@@ -71,9 +71,9 @@ public class Endereco {
 
 	@Override
 	public String toString() {
-		return "CodEndereço: " + getCodEndereco() + 
+		return "\nCodEndereï¿½o: " + getCodEndereco() + 
 				"\nAvenida / Rua / Travessa: " + getRua() +
-				"\nNúmero: " + getNumero() +
+				"\nNï¿½mero: " + getNumero() +
 				"\nBairro: " + getBairro() +
 				"\nCidade: " + getCidade() +
 				"\nCep: " + getCep() + "\n";

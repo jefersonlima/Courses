@@ -13,12 +13,14 @@ public class Pessoa implements Verificavel{
 	private String cpf; 
 	private String celular; 
 	private int prioridade;
-	private Endereco endereco; 
+	private Endereco endereco;
 	private String profissao; 
 	private boolean comorbidade; 
 	private String raca; 
 	private boolean gestante;
-	
+
+	public Pessoa(){}
+
 	public Pessoa(String nome, Integer idade, char sexo, String cpf, String celular, Endereco endereco,
 			String profissao, boolean comorbidade, String raca, boolean gestante) {
 		super();
@@ -212,10 +214,10 @@ public class Pessoa implements Verificavel{
 				"\ncpf: " + cpf + 
 				"\ncelular: " + celular+ 
 				"\nprioridade: " + prioridade + 
-				"\nendereco: " + endereco + 
+				"\nEndereco:" + endereco + 
 				"\nprofissao: " + profissao + 
 				"\ncomorbidade: " + comorbidade + 
 				"\nraca: " + raca + 
-				"\ngestante: " + gestante;
+				"\ngestante: " + gestante+"\n";
 	}
 }
