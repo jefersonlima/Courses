@@ -4,17 +4,17 @@ import java.util.Scanner;
 import Menu.MenuVacina;
 // Import class
 import Pessoa.Pessoa;
-
+import Vacina.Vacina;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		MenuVacina vacina;
+		MenuVacina vacina = new MenuVacina();
 		
 		System.out.println(
 				"Bem-vindo ao sistema de vacina!\n"
-				+ "Selecione as ações abaixo:\n"
+				+ "Selecione uma op��o:\n"
 				+ "1 - Vacina\n"
 				+ "2 - Local\n"
 				+ "3 - Enfermeiros\n"
@@ -27,14 +27,7 @@ public class Main {
 		switch(op) {
 		case 1: 
 			// Vacina
-			System.out.println(
-				"Selecione as ações abaixo:\n"
-				+ "1 - Cadastrar\n"
-				+ "2 - Listar\n"
-				+ "3 - Alterar\n"
-				+ "4 - Deletar\n"
-				+ "0 - Voltar"
-			);
+			vacina.getMenuVacina();
 		break;
 		case 2: 
 			// Local
