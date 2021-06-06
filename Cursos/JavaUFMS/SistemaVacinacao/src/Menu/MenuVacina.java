@@ -26,21 +26,26 @@ public class MenuVacina{
 			switch(op) {
 				case 1: 
 					// Cadastrar
-					System.out.println("Cadastrar");
+					System.out.println("----- Cadastrar Vacinas -----");
 					CadastrarVacina();
+					System.out.println("---------------");
 				break;
 				case 2: 
 					// Listar
-					System.out.println("Listar");
+					System.out.println("----- Listar Vacinas -----");
 					ListarVacinas();
+					System.out.println("---------------");
 				break;
 				case 3:
 					// Alterar
-					System.out.println("Alterar");
+					System.out.println("----- Alterar Vacinas -----");
+
+					System.out.println("---------------");
 				break;
 				case 4:
 					// Deletar
-					System.out.println("Deletar");
+					System.out.println("----- Deletar Vacinas -----");
+					System.out.println("---------------");
 				break;
 				default:
 				break;
