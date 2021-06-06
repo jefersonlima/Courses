@@ -3,13 +3,13 @@ package LocalVacinacao;
 import Endereco.Endereco;
 
 public class LocalVacinacao {
-	private int codLocalVacinacao;
+	private static int codLocalVacinacao =0;
 	private String NomeLocal;
 	private Endereco endereco;
 	
-	public LocalVacinacao(int codLocalVacinacao, String nomeLocal, Endereco endereco) {
+	public LocalVacinacao(String nomeLocal, Endereco endereco) {
 		super();
-		this.codLocalVacinacao = codLocalVacinacao;
+		codLocalVacinacao += 1;
 		this.NomeLocal = nomeLocal;
 		this.endereco = endereco;
 	}
@@ -42,7 +42,7 @@ public class LocalVacinacao {
 	public String toString() {
 		return "LocalVacinacao:\n" +
 				"Nome do Local: " + NomeLocal + 
-				"Endereco" + endereco.toString();
+				"\nEndereco" + endereco.toString();
 	}
 
 }

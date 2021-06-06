@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import Menu.MenuPessoa;
 import Menu.MenuVacina;
+import Menu.MenuLocal;
 // Import class
 import Pessoa.Pessoa;
 import Vacina.Vacina;
@@ -13,6 +14,7 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		MenuVacina vacina = new MenuVacina();
 		MenuPessoa pessoa = new MenuPessoa();
+		MenuLocal localVacina = new MenuLocal();
 		
 		System.out.println(
 			"Bem-vindo ao sistema de vacina!\n"
@@ -33,6 +35,7 @@ public class Main {
 		break;
 		case 2: 
 			// Local
+			localVacina.getMenuLocal();
 		break;
 		case 3:
 			// Enfermeiros
