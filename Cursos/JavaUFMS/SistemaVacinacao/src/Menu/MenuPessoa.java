@@ -39,11 +39,15 @@ public class MenuPessoa{
 				break;
 				case 3:
 					// Alterar
-					System.out.println("Alterar");
+					System.out.println("----- Alterar Cadastro -----");
+					AlterarPessoa();
+					System.out.println("---------------");
 				break;
 				case 4:
 					// Deletar
 					System.out.println("Deletar");
+					deletarPessoa();
+					System.out.println("---------------");
 				break;
 				case 99:
 					populaPessoas();
@@ -69,7 +73,7 @@ public class MenuPessoa{
 		listPessoa.add(new Pessoa("Isadora", 50, 'F', "45457869369", "(62) 98528-9986", endereco.get(3), "Professor", false, "Parda", true));
 	}
 
-	public void CadastrarPessoa(){
+	private void CadastrarPessoa(){
 		Pessoa pessoa;
 		Endereco endereco;
 		System.out.println("Informe o nome:");
@@ -148,9 +152,104 @@ public class MenuPessoa{
 		System.out.println("----- Pessoa cadastrada com sucesso! -----");
 	}
 
-	public void ListarPessoas() {
+	private void ListarPessoas() {
 		for (Pessoa p: listPessoa) {
 			System.out.println(p);
 		}
+	}
+
+	private void  AlterarPessoa(){
+		if (listPessoa.size() == 0) {
+			System.out.println("Não a pessoas para alterar!");
+			return;
+		}
+		System.out.println("----- Qual cadastro deseja alterar? -----");
+		System.out.println("----- Informe o cpf que deseja alterar o cadastro! -----");
+		String cpfIn = in.next();
+		for (Pessoa p : listPessoa) {
+			if(p.getCpf().equals(cpfIn)){
+				System.out.println(p.getNome());
+				int op = 1;
+				while(op != 0){
+					System.out.println("Seleciona oque deseja alterar!\n"
+						+"1 - Endereço:\n"
+						+"2 - Idade:\n"
+						+"3 - Celular:\n"
+						+"4 - Profissao:\n"
+						+"5 - Comorbidade:\n"
+						+"0 - Sair");
+					op = in.nextInt();
+					in.nextLine();
+					
+					switch(op){
+						case 1:
+							System.out.println("\nInforme a rua:");
+							String rua = in.nextLine();
+
+							System.out.println("Informe o número:");
+							int numero = in.nextInt();
+							in.nextLine();
+
+							System.out.println("Informe o Bairro:");
+							String bairro = in.nextLine();
+
+							System.out.println("Informe a cidade:");
+							String cidade = in.nextLine();
+
+							System.out.println("Informe o CEP: (campo pode ser em branco!)");
+							String cep = in.nextLine();
+
+							if (cep != null) {
+								p.setEndereco( new Endereco(rua, numero, bairro, cidade, cep));
+							} else {
+								p.setEndereco( new Endereco(rua, numero, bairro, cidade));
+							}
+						break;
+						case 2:
+							System.out.println("Informe a Idade:");
+							p.setIdade(in.nextInt());
+						break;
+						case 3:
+							System.out.println("Informe o número de celular:");
+							p.setCelular(in.nextLine());
+						break;
+						case 4:
+							System.out.println("Informe a profissão:");
+							p.setProfissao(in.nextLine());
+						break;
+						case 5:
+							System.out.println("Informe se tem comorbidade: S/N");
+							char comorbidade = in.next().charAt(0);
+							if (comorbidade == 'S') {
+								p.setComorbidade(true);
+							} else {
+								p.setComorbidade(false);
+							}
+						break;
+					}
+				}
+				
+
+				
+			}
+		}
+		System.out.println("----- CPF não encontrado! -----");
+	}
+
+	private void deletarPessoa() {
+		if(listPessoa.size() == 0){
+			System.out.println("Não a pessoas para deletar!");
+			return;
+		}
+		System.out.println("----- Informe o CPF para deletar! -----");
+		String cpfIn = in.next();
+		for (Pessoa p : listPessoa) {
+			if(p.getCpf().equals(cpfIn)){
+				listPessoa.remove(p);
+				System.out.println("----- Pessoa deletada! -----");
+				break;
+			}
+		}
+		System.out.println("----- CPF não encontrado! -----");
 	}
 }
