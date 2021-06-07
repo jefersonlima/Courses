@@ -8,72 +8,81 @@ import java.util.Scanner;
 import Pessoa.Pessoa;
 import Endereco.Endereco;
 
-public class MenuPessoa{
+public class MenuPessoa implements Menu{
 	Scanner in = new Scanner(System.in);
 	ArrayList<Pessoa> listPessoa = new ArrayList<Pessoa>();
 
-	public void getMenuPessoa() {
+	@Override
+	public void getMenu() {
 		int op = 1;
 		while(op != 0) {
 			System.out.println(
-					"Selecione as ações abaixo:\n"
-					+ "1 - Cadastrar\n"
-					+ "2 - Listar\n"
-					+ "3 - Alterar\n"
-					+ "4 - Deletar\n"
-					+ "0 - Voltar"
+					"#####################PESSOAS#######################\n"
+					+"##### Selecione as ações abaixo!             #####\n"
+					+"##### 1 - Cadastrar                          #####\n"
+					+"##### 2 - Consultar                          #####\n"
+					+"##### 3 - Listar                             #####\n"
+					+"##### 4 - Alterar                            #####\n"
+					+"##### 5 - Deletar                            #####\n"
+					+"##### 0 - Voltar                             #####\n"
+					+"##################################################"
 				); 
 			op = in.nextInt();
 			in.nextLine();
 			switch(op) {
 				case 1: 
 					// Cadastrar
-					System.out.println("----- Cadastrar de Pessoa -----");
-					CadastrarPessoa();
+					System.out.println(
+						"##################################################\n"
+                        +"#####    Cadastrar                           #####"
+					);
+					cadastrar();
 				break;
 				case 2: 
-					// Listar
-					System.out.println("----- Lista de Pessoas -----");
-					ListarPessoas();
-					System.out.println("---------------");
+					// Consultar
+					System.out.println(
+						"##################################################\n"
+                        +"#####    Consultar                           #####"
+					);
+					consultar();
 				break;
 				case 3:
-					// Alterar
-					System.out.println("----- Alterar Cadastro -----");
-					AlterarPessoa();
-					System.out.println("---------------");
+					// Listar
+					System.out.println(
+						"##################################################\n"
+                        +"#####    Listar                              #####"
+						);
+					listagem();
 				break;
 				case 4:
+					// Alterar
+					System.out.println(
+						"##################################################\n"
+                        +"#####    Alterar                             #####"
+					);
+					alterar();
+				break;
+				case 5:
 					// Deletar
-					System.out.println("Deletar");
-					deletarPessoa();
-					System.out.println("---------------");
+					System.out.println(
+						"##################################################\n"
+						+"#####    Deletar                             #####"
+					);
+					deletar();
 				break;
 				case 99:
-					populaPessoas();
+					popular();
 				break;
 				default:
+					System.out.println("Opção inválida!");
 				break;
 			}
 		}
-}
-
-	private void populaPessoas() {
-		List<Endereco> endereco = new ArrayList<Endereco>();
-		// Endereços
-		endereco.add( new Endereco("Rua Ayrton Senna", 114, "Belo Jardim II", "Rio Branco","69908032"));
-		endereco.add( new Endereco("Rua Via Firenze", 192, "Jardim Vila Paradiso", "Indaiatuba","13331563"));
-		endereco.add( new Endereco("Servidão Nove de Novembro", 945, "Retiro", "Volta Redonda","27277212"));
-		endereco.add( new Endereco("Rua Quatro", 772, "Quintas Coloniais", "Contagem","32044480"));
-
-		// Pessoas
-		listPessoa.add(new Pessoa("Gilson Jose do Santos", 26, 'M', "87025384828", "(67) 99459-3797", endereco.get(0), "Designer", false, "Pardo", false));
-		listPessoa.add(new Pessoa("Jeferson", 65, 'M', "70429878109", "(83) 99940-1105", endereco.get(1), "Professor", false, "Preto", false));
-		listPessoa.add(new Pessoa("Henrique Theo Guilherme Rezende", 65, 'M', "54058291451", "(68)99164-9104", endereco.get(2), "Professor", true, "Branco", false));
-		listPessoa.add(new Pessoa("Isadora", 50, 'F', "45457869369", "(62) 98528-9986", endereco.get(3), "Professor", false, "Parda", true));
+		
 	}
 
-	private void CadastrarPessoa(){
+	@Override
+	public void cadastrar() {
 		Pessoa pessoa;
 		Endereco endereco;
 		System.out.println("Informe o nome:");
@@ -152,32 +161,57 @@ public class MenuPessoa{
 		System.out.println("----- Pessoa cadastrada com sucesso! -----");
 	}
 
-	private void ListarPessoas() {
+	@Override
+	public void consultar() {
+		if(isListEmpty()){
+			return;
+		}
+        System.out.println("##### Informe o CPF da pessoa que deseja consultar #####");
+        String cpfIn = in.next();
+        for (Pessoa p : listPessoa) {
+            if(p.getCpf().equals(cpfIn)){
+                System.out.println("##### Pessoa encontrada #####");
+                System.out.println(p);
+				return;
+            }
+        }
+		System.out.println("#####          CPF não encontrado!           #####");
+	}
+
+	@Override
+	public void listagem() {
+		if(isListEmpty()){
+			return;
+		}
 		for (Pessoa p: listPessoa) {
 			System.out.println(p);
 		}
 	}
 
-	private void  AlterarPessoa(){
-		if (listPessoa.size() == 0) {
-			System.out.println("Não a pessoas para alterar!");
+	@Override
+	public void alterar() {
+		if(isListEmpty()){
 			return;
 		}
-		System.out.println("----- Qual cadastro deseja alterar? -----");
-		System.out.println("----- Informe o cpf que deseja alterar o cadastro! -----");
+		System.out.println("##### Qual cadastro deseja alterar? #####");
+		System.out.println("##### Informe o cpf que deseja alterar o cadastro! #####");
 		String cpfIn = in.next();
 		for (Pessoa p : listPessoa) {
 			if(p.getCpf().equals(cpfIn)){
 				System.out.println(p.getNome());
 				int op = 1;
 				while(op != 0){
-					System.out.println("Seleciona oque deseja alterar!\n"
-						+"1 - Endereço:\n"
-						+"2 - Idade:\n"
-						+"3 - Celular:\n"
-						+"4 - Profissao:\n"
-						+"5 - Comorbidade:\n"
-						+"0 - Sair");
+					System.out.println(
+						"##################################################\n"
+						+"##### Seleciona oque deseja alterar!         #####\n"
+						+"##### 1 - Endereço:                          #####\n"
+						+"##### 2 - Idade:                             #####\n"
+						+"##### 3 - Celular:                           #####\n"
+						+"##### 4 - Profissao:                         #####\n"
+						+"##### 5 - Comorbidade:                       #####\n"
+						+"##### 0 - Sair                               #####\n"
+						+"##################################################"
+						);
 					op = in.nextInt();
 					in.nextLine();
 					
@@ -228,17 +262,15 @@ public class MenuPessoa{
 						break;
 					}
 				}
-				
-
-				
+				return;
 			}
 		}
-		System.out.println("----- CPF não encontrado! -----");
+		System.out.println("#####          CPF não encontrado!           #####");
 	}
 
-	private void deletarPessoa() {
-		if(listPessoa.size() == 0){
-			System.out.println("Não a pessoas para deletar!");
+	@Override
+	public void deletar() {
+		if(isListEmpty()){
 			return;
 		}
 		System.out.println("----- Informe o CPF para deletar! -----");
@@ -247,9 +279,35 @@ public class MenuPessoa{
 			if(p.getCpf().equals(cpfIn)){
 				listPessoa.remove(p);
 				System.out.println("----- Pessoa deletada! -----");
-				break;
+				return;
 			}
 		}
-		System.out.println("----- CPF não encontrado! -----");
+		System.out.println("#####          CPF não encontrado!           #####");
+	}
+
+	@Override
+	public void popular() {
+		List<Endereco> endereco = new ArrayList<Endereco>();
+		// Endereços
+		endereco.add( new Endereco("Rua Ayrton Senna", 114, "Belo Jardim II", "Rio Branco","69908032"));
+		endereco.add( new Endereco("Rua Via Firenze", 192, "Jardim Vila Paradiso", "Indaiatuba","13331563"));
+		endereco.add( new Endereco("Servidão Nove de Novembro", 945, "Retiro", "Volta Redonda","27277212"));
+		endereco.add( new Endereco("Rua Quatro", 772, "Quintas Coloniais", "Contagem","32044480"));
+
+		// Pessoas
+		listPessoa.add(new Pessoa("Gilson Jose do Santos", 26, 'M', "87025384828", "(67) 99459-3797", endereco.get(0), "Designer", false, "Pardo", false));
+		listPessoa.add(new Pessoa("Jeferson", 65, 'M', "70429878109", "(83) 99940-1105", endereco.get(1), "Professor", false, "Preto", false));
+		listPessoa.add(new Pessoa("Henrique Theo Guilherme Rezende", 65, 'M', "54058291451", "(68)99164-9104", endereco.get(2), "Professor", true, "Branco", false));
+		listPessoa.add(new Pessoa("Isadora", 50, 'F', "45457869369", "(62) 98528-9986", endereco.get(3), "Professor", false, "Parda", true));
+
+		System.out.println("#####    Itens cadastrados "+listPessoa.size()+"                 #####");
+	}
+
+	public boolean isListEmpty(){
+		if(listPessoa.size() == 0){
+			System.out.println("#####         Não a items na lista!          #####");
+			return true;
+		}
+		return false;
 	}
 }
