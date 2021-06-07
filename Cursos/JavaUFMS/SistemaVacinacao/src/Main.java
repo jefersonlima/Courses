@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import Menu.MenuPessoa;
 import Menu.MenuVacina;
+import Menu.MenuFuncionario;
 import Menu.MenuLocal;
 // Import class
 import Pessoa.Pessoa;
@@ -15,6 +16,7 @@ public class Main {
 		MenuVacina vacina = new MenuVacina();
 		MenuPessoa pessoa = new MenuPessoa();
 		MenuLocal localVacina = new MenuLocal();
+		MenuFuncionario funcionario = new MenuFuncionario();
 		
 		int op = 1;
 		while (op != 0) { 
@@ -43,6 +45,7 @@ public class Main {
 				break;
 				case 3:
 					// Enfermeiros
+					funcionario.getMenuFuncionario();
 					op = 1;
 				break;
 				case 4:

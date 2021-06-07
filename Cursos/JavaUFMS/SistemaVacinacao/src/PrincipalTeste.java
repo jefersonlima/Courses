@@ -14,32 +14,32 @@ public class PrincipalTeste {
 	public static void main(String[] args) {
 		
 		List<Endereco> endereco = new ArrayList<Endereco>();
-		endereco.add( new Endereco(1, "rua", 0, "bairro", "cidade", "cep"));
-		endereco.add( new Endereco(2, "rua", 0, "bairro", "cidade"));
+//		endereco.add( new Endereco(1, "rua", 0, "bairro", "cidade", "cep"));
+//		endereco.add( new Endereco(2, "rua", 0, "bairro", "cidade"));
 		 
 		for (Endereco e: endereco) {
 			System.out.println(e);
 		}
 		 
 		 //INSTANCIAS DAS VACINAS
-		List<Vacina> vacina = new ArrayList<Vacina>();
-		vacina.add( new Vacina(1, "CORONAVAC", "CHINA", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(2, "ASTRAZENECA", "fabricante", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(3, "Covaxin", "Bharat Biotech", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(4, "Sputnik V", "RUSSIA", 1, 18, 2, 92, "restricoes"));
-		vacina.add( new Vacina(5, "Vacina de Oxford", "Universidade de Oxford", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(6, "Moderna", "EUA", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(7, "Vacina da Pfizer", "Estados Unidos e Alemanha", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(8, "Sinopharm", "CHINA", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(9, "CanSino", "CHINA", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(10, "Johnson", "EUA", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(11, "Novavax", "EUA", 1, 18, 2, 57, "restricoes"));
-		vacina.add( new Vacina(12, "CanSino", "CHINA", 1, 18, 2, 57, "restricoes"));
+//		List<Vacina> vacina = new ArrayList<Vacina>();
+//		vacina.add( new Vacina(1, "CORONAVAC", "CHINA", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(2, "ASTRAZENECA", "fabricante", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(3, "Covaxin", "Bharat Biotech", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(4, "Sputnik V", "RUSSIA", 1, 18, 2, 92, "restricoes"));
+//		vacina.add( new Vacina(5, "Vacina de Oxford", "Universidade de Oxford", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(6, "Moderna", "EUA", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(7, "Vacina da Pfizer", "Estados Unidos e Alemanha", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(8, "Sinopharm", "CHINA", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(9, "CanSino", "CHINA", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(10, "Johnson", "EUA", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(11, "Novavax", "EUA", 1, 18, 2, 57, "restricoes"));
+//		vacina.add( new Vacina(12, "CanSino", "CHINA", 1, 18, 2, 57, "restricoes"));
 		
 		//imprime toda Lista Vacina
-		for (Vacina v: vacina) {
-			System.out.println(v);
-		}
+//		for (Vacina v: vacina) {
+//			System.out.println(v);
+//		}
 		 
 		 
 		 //INSTANCIAS DOS LOCAIS
