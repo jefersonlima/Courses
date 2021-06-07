@@ -201,7 +201,7 @@ public class Pessoa implements Verificavel{
 	
 	public void solicitarNovo(String nome, Integer idade, char sexo, String cpf, String celular, Endereco endereco, String profissao, boolean comorbidade, String raca, boolean gestante) {
 		System.out.println("CPF: " + cpf + " Invalido!\n Digite Novamente");
-		String novoCpf = "00409163163";
+		String novoCpf = "98765432100";
 		Pessoa pessoa = new Pessoa(nome, idade, sexo, novoCpf, celular, endereco, profissao, comorbidade, raca, gestante);
 	}
 

@@ -2,7 +2,7 @@ package Vacina;
 
 public class Vacina {
 	
-	private int codVacina;
+	//private static int codVacina = 0;
 	private String nomeVacina;
 	private String fabricante;
 	private Integer duracao;
@@ -13,6 +13,7 @@ public class Vacina {
 	
 	public Vacina(String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficacia, String restricoes) {
 		super();
+		//codVacina += 1;
 		this.nomeVacina = nomeVacina;
 		this.fabricante = fabricante;
 		this.duracao = duracao;
@@ -22,13 +23,13 @@ public class Vacina {
 		this.restricoes = restricoes;
 	}
 
-	public int getCodVacina() {
-		return codVacina;
-	}
+	//public int getCodVacina() {
+	//	return codVacina;
+	//}
 
-	public void setCodVacina(int codVacina) {
-		this.codVacina = codVacina;
-	}
+	//public void setCodVacina(int codVacina) {
+	//	this.codVacina = codVacina;
+	//}
 
 	public String getNomeVacina() {
 		return nomeVacina;
@@ -86,16 +87,17 @@ public class Vacina {
 		this.restricoes = restricoes;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Vacina:" +
-				"\nCódigo Vacina: " + codVacina + 
+				//"\nCódigo Vacina: " + codVacina + 
 				"\nNome Vacina: " + nomeVacina + 
 				"\nFabricante: " + fabricante + 
 				"\nDuracao em Meses: " + duracao + 
 				"\nIdade Mínima: " + idadeMinima + 
 				"\nQuantidade de Doses: " + dose + 
-				"\nEficácia em %: " + eficacia + 
+				"\nEficácia em: " + eficacia + "%" +
 				"\nRestrições: "	+ restricoes + "\n";
 	}	
 	
