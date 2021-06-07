@@ -12,6 +12,10 @@ public class MenuPessoa implements Menu{
 	Scanner in = new Scanner(System.in);
 	ArrayList<Pessoa> listPessoa = new ArrayList<Pessoa>();
 
+	public boolean isPessoa(){
+        return listPessoa.size() != 0 ? true : false;
+    }
+
 	@Override
 	public void getMenu() {
 		int op = 1;

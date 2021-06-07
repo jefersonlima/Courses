@@ -12,6 +12,10 @@ public class MenuLocal implements Menu{
     Scanner in = new Scanner(System.in);
     ArrayList<LocalVacinacao> listaLocalVacina = new ArrayList<LocalVacinacao>();
 
+    public boolean isLocalVacina(){
+        return listaLocalVacina.size() != 0 ? true : false;
+    }
+
     @Override
     public void getMenu(){
         int op = 1;

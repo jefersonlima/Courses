@@ -17,8 +17,14 @@ public class Main {
 		MenuPessoa pessoa = new MenuPessoa();
 		MenuLocal localVacina = new MenuLocal();
 		MenuFuncionario menuFuncionario = new MenuFuncionario();
+
 		int op = 1;
 		while(op != 0){
+			String listVacina = localVacina.isLocalVacina() ? "##### 5 - Listar vacinas                     #####\n" : "";
+			String listLocal = localVacina.isLocalVacina() ? "##### 6 - Listar local de vacinas            #####\n" : "";
+			String listEnfermeiro = localVacina.isLocalVacina() ? "##### 7 - Listar enfermeiros                 #####\n" : "";
+			String listPessoa = pessoa.isPessoa() ? "##### 8 - Listar pessoas                     #####\n" : "";
+
 			System.out.println(
 				"##################################################\n"
 				+"##### Bem-vindo ao sistema de vacina!        #####\n"
@@ -27,10 +33,14 @@ public class Main {
 				+"##### 2 - Local                              #####\n"
 				+"##### 3 - Enfermeiros                        #####\n"
 				+"##### 4 - Pessoas                            #####\n"
+				+listVacina
+				+listLocal
+				+listEnfermeiro
+				+listPessoa
 				+"##### 0 - Sair                               #####\n"
 				+"##################################################"
 			);
-			
+
 			op = in.nextInt();
 
 			switch(op) {
@@ -49,8 +59,36 @@ public class Main {
 					// Pessoas
 					pessoa.getMenu();
 				break;
+				case 5:
+					if(localVacina.isLocalVacina()){
+						localVacina.listagem();
+					}else{
+						System.out.println("Opção inválida!");
+					}
+				break;
+				case 6:
+					if(pessoa.isPessoa()){
+						pessoa.listagem();
+					}else{
+						System.out.println("Opção inválida!");
+					}
+				break;
+				case 7:
+					if(pessoa.isPessoa()){
+						pessoa.listagem();
+					}else{
+						System.out.println("Opção inválida!");
+					}
+				break;
+				case 8:
+					if(pessoa.isPessoa()){
+						pessoa.listagem();
+					}else{
+						System.out.println("Opção inválida!");
+					}
+				break;
 				default:
-					System.out.println("Opção inválida!");
+					System.out.println("Opção inválida!111");
 				break;
 			}
 		}
