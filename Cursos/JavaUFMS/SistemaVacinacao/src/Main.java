@@ -16,6 +16,7 @@ public class Main {
 		MenuVacina vacina = new MenuVacina();
 		MenuPessoa pessoa = new MenuPessoa();
 		MenuLocal localVacina = new MenuLocal();
+		MenuFuncionario menuFuncionario = new MenuFuncionario();
 		int op = 1;
 		while(op != 0){
 			System.out.println(
@@ -42,7 +43,7 @@ public class Main {
 					localVacina.getMenu();
 				break;
 				case 3:
-					// Enfermeiros
+					menuFuncionario.getMenuFuncionario();
 				break;
 				case 4:
 					// Pessoas
