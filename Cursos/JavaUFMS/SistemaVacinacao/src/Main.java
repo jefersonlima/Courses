@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import Menu.MenuPessoa;
 import Menu.MenuVacina;
+import Menu.MenuFuncionario;
 import Menu.MenuLocal;
 // Import class
 import Pessoa.Pessoa;
