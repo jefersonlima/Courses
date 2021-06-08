@@ -87,7 +87,6 @@ public class Vacina {
 		this.restricoes = restricoes;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Vacina:" +
@@ -99,6 +98,5 @@ public class Vacina {
 				"\nQuantidade de Doses: " + dose + 
 				"\nEficacia em: " + eficacia + "%" +
 				"\nRestrições: "	+ restricoes + "\n";
-	}	
-	
+	}		
 }

@@ -28,7 +28,7 @@ public class Main {
 			System.out.println(
 				"##################################################\n"
 				+"##### Bem-vindo ao sistema de vacina!        #####\n"
-				+"##### Selecione uma opção:                   #####\n"
+				+"##### Selecione uma opcao:                   #####\n"
 				+"##### 1 - Vacina                             #####\n"
 				+"##### 2 - Local                              #####\n"
 				+"##### 3 - Enfermeiros                        #####\n"
@@ -53,7 +53,7 @@ public class Main {
 					localVacina.getMenu();
 				break;
 				case 3:
-					menuFuncionario.getMenuFuncionario();
+					menuFuncionario.getMenu();
 				break;
 				case 4:
 					// Pessoas
@@ -63,32 +63,32 @@ public class Main {
 					if(localVacina.isLocalVacina()){
 						localVacina.listagem();
 					}else{
-						System.out.println("Opção inválida!");
+						System.out.println("Opcao invalida!");
 					}
 				break;
 				case 6:
 					if(pessoa.isPessoa()){
 						pessoa.listagem();
 					}else{
-						System.out.println("Opção inválida!");
+						System.out.println("Opcao invalida!");
 					}
 				break;
 				case 7:
 					if(pessoa.isPessoa()){
 						pessoa.listagem();
 					}else{
-						System.out.println("Opção inválida!");
+						System.out.println("Opcao invalida!");
 					}
 				break;
 				case 8:
 					if(pessoa.isPessoa()){
 						pessoa.listagem();
 					}else{
-						System.out.println("Opção inválida!");
+						System.out.println("Opcao invalida!");
 					}
 				break;
 				default:
-					System.out.println("Opção inválida!111");
+					System.out.println("Opcao invalida!");
 				break;
 			}
 		}
