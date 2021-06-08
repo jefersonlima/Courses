@@ -23,7 +23,7 @@ public class MenuPessoa implements Menu{
 		while(op != 0) {
 			System.out.println(
 					"#####################PESSOAS#######################\n"
-					+"##### Selecione as ações abaixo!             #####\n"
+					+"##### Selecione as acoes abaixo!             #####\n"
 					+"##### 1 - Cadastrar                          #####\n"
 					+"##### 2 - Consultar                          #####\n"
 					+"##### 3 - Listar                             #####\n"
@@ -79,7 +79,7 @@ public class MenuPessoa implements Menu{
 					popular();
 				break;
 				default:
-					System.out.println("Opção inválida!");
+					System.out.println("Opcao invalida!");
 				break;
 			}
 		}
@@ -103,14 +103,14 @@ public class MenuPessoa implements Menu{
 		String cpf = in.next();
 		in.nextLine();
 		
-		System.out.println("Informe o número de celular:");
+		System.out.println("Informe o numero de celular:");
 		String celular = in.nextLine();
 		
 		System.out.println("----- Cadastro de Endereço -----");
 		System.out.println("Informe a rua:");
 		String rua = in.nextLine();
 
-		System.out.println("Informe o número:");
+		System.out.println("Informe o numero:");
 		int numero = in.nextInt();
 		in.nextLine();
 
@@ -129,7 +129,7 @@ public class MenuPessoa implements Menu{
 			endereco = new Endereco(rua, numero, bairro, cidade);
 		}
 
-		System.out.println("Informe a profissão:");
+		System.out.println("Informe a profisssao:");
 		String profissao = in.nextLine();
 
 		System.out.println("Informe se tem comorbidade: S/N");
@@ -148,8 +148,13 @@ public class MenuPessoa implements Menu{
 		if (sexo == 'M') {
 			gestante = false;
 		}else {
-			System.out.println("Informe se é gestante: True/False");
-			gestante = in.nextBoolean();
+			char gest = in.next().charAt(0);
+			System.out.println("Informe se e gestante: S/N");
+			if(gest == 'S'){
+				gestante = true;
+			}else{
+				gestante = false;
+			}
 		}
 
 		// Validar CPF antes de incerir na Lista
@@ -180,7 +185,7 @@ public class MenuPessoa implements Menu{
 				return;
             }
         }
-		System.out.println("#####          CPF não encontrado!           #####");
+		System.out.println("#####          CPF nao encontrado!           #####");
 	}
 
 	@Override
@@ -225,11 +230,11 @@ public class MenuPessoa implements Menu{
 							System.out.println("\nInforme a rua:");
 							String rua = in.nextLine();
 
-							System.out.println("Informe o número:");
+							System.out.println("Informe o numero:");
 							int numero = in.nextInt();
 							in.nextLine();
 
-							System.out.println("Informe o Bairro:");
+							System.out.println("Informe o bairro:");
 							String bairro = in.nextLine();
 
 							System.out.println("Informe a cidade:");
@@ -249,11 +254,11 @@ public class MenuPessoa implements Menu{
 							p.setIdade(in.nextInt());
 						break;
 						case 3:
-							System.out.println("Informe o número de celular:");
+							System.out.println("Informe o numero de celular:");
 							p.setCelular(in.nextLine());
 						break;
 						case 4:
-							System.out.println("Informe a profissão:");
+							System.out.println("Informe a profissao:");
 							p.setProfissao(in.nextLine());
 						break;
 						case 5:
@@ -270,7 +275,7 @@ public class MenuPessoa implements Menu{
 				return;
 			}
 		}
-		System.out.println("#####          CPF não encontrado!           #####");
+		System.out.println("#####          CPF nao encontrado!           #####");
 	}
 
 	@Override
@@ -287,7 +292,7 @@ public class MenuPessoa implements Menu{
 				return;
 			}
 		}
-		System.out.println("#####          CPF não encontrado!           #####");
+		System.out.println("#####          CPF nao encontrado!           #####");
 	}
 
 	@Override
@@ -296,7 +301,7 @@ public class MenuPessoa implements Menu{
 		// Endereços
 		endereco.add( new Endereco("Rua Ayrton Senna", 114, "Belo Jardim II", "Rio Branco","69908032"));
 		endereco.add( new Endereco("Rua Via Firenze", 192, "Jardim Vila Paradiso", "Indaiatuba","13331563"));
-		endereco.add( new Endereco("Servidão Nove de Novembro", 945, "Retiro", "Volta Redonda","27277212"));
+		endereco.add( new Endereco("Servidao Nove de Novembro", 945, "Retiro", "Volta Redonda","27277212"));
 		endereco.add( new Endereco("Rua Quatro", 772, "Quintas Coloniais", "Contagem","32044480"));
 
 		// Pessoas
@@ -310,7 +315,7 @@ public class MenuPessoa implements Menu{
 
 	public boolean isListEmpty(){
 		if(listPessoa.size() == 0){
-			System.out.println("#####         Não a items na lista!          #####");
+			System.out.println("#####         Nao a items na lista!          #####");
 			return true;
 		}
 		return false;
