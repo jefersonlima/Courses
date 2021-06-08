@@ -46,7 +46,7 @@ public class Main {
 			switch(op) {
 				case 1:
 					// Vacina
-					vacina.getMenuVacina();
+					vacina.getMenu();
 				break;
 				case 2: 
 					// Local
