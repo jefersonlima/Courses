@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import LocalVacinacao.LocalVacinacao;
 import Endereco.Endereco;
+import Interfaces.Menu;
 
 public class MenuLocal implements Menu{
     Scanner in = new Scanner(System.in);

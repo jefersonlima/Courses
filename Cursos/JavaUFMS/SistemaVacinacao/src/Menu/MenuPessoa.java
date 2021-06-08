@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import Pessoa.Pessoa;
 import Endereco.Endereco;
+import Interfaces.Menu;
 
 public class MenuPessoa implements Menu{
 	Scanner in = new Scanner(System.in);
