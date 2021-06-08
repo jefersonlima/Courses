@@ -15,6 +15,10 @@ public class MenuFuncionario implements Menu{
 
 	List<Funcionario> listFuncionario = new ArrayList<Funcionario>();
 
+	public boolean isFuncionario(){
+        return listFuncionario.size() != 0 ? true : false;
+    }
+
 	@Override
 	public void getMenu() {
 		int op = 1;

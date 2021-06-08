@@ -11,6 +11,10 @@ public class MenuVacina implements Menu{
 	Scanner in = new Scanner(System.in);
 	
 	List<Vacina> listVacina = new ArrayList<Vacina>();
+
+	public boolean isVacina(){
+        return listVacina.size() != 0 ? true : false;
+    }
 	
 	@Override
 	public void getMenu() {

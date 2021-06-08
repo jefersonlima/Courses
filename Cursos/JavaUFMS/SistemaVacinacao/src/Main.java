@@ -20,9 +20,9 @@ public class Main {
 
 		int op = 1;
 		while(op != 0){
-			String listVacina = localVacina.isLocalVacina() ? "##### 5 - Listar vacinas                     #####\n" : "";
+			String listVacina = vacina.isVacina() ? "##### 5 - Listar vacinas                     #####\n" : "";
 			String listLocal = localVacina.isLocalVacina() ? "##### 6 - Listar local de vacinas            #####\n" : "";
-			String listEnfermeiro = localVacina.isLocalVacina() ? "##### 7 - Listar enfermeiros                 #####\n" : "";
+			String listEnfermeiro = menuFuncionario.isFuncionario() ? "##### 7 - Listar enfermeiros                 #####\n" : "";
 			String listPessoa = pessoa.isPessoa() ? "##### 8 - Listar pessoas                     #####\n" : "";
 
 			System.out.println(
@@ -60,22 +60,22 @@ public class Main {
 					pessoa.getMenu();
 				break;
 				case 5:
+					if(vacina.isVacina()){
+						vacina.listagem();
+					}else{
+						System.out.println("Opcao invalida!");
+					}
+				break;
+				case 6:
 					if(localVacina.isLocalVacina()){
 						localVacina.listagem();
 					}else{
 						System.out.println("Opcao invalida!");
 					}
 				break;
-				case 6:
-					if(pessoa.isPessoa()){
-						pessoa.listagem();
-					}else{
-						System.out.println("Opcao invalida!");
-					}
-				break;
 				case 7:
-					if(pessoa.isPessoa()){
-						pessoa.listagem();
+					if(menuFuncionario.isFuncionario()){
+						menuFuncionario.listagem();
 					}else{
 						System.out.println("Opcao invalida!");
 					}
