@@ -199,8 +199,8 @@ public class MenuLocal implements Menu{
 						break;
 					}
 				}
+				return;
 			}
-            return;
 		}
         System.out.println("#####         Local não encontrado!          #####");
     }
