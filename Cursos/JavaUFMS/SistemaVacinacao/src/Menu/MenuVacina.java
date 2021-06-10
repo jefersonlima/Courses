@@ -21,13 +21,15 @@ public class MenuVacina implements Menu{
 		int op = 1;
 		while(op != 0) {
 			System.out.println(
-					"Selecione uma opcao:\n"
-					+ "1 - Cadastrar nova Vacina\n"
-					+ "2 - Consultar uma Vacina\n"
-					+ "3 - Listar Todas Vacinas Cadastradas \n"
-					+ "4 - Alterar uma Vacina\n"
-					+ "5 - Deletar uma Vacina\n"
-					+ "0 - Voltar"
+					  "##################### VACINA #####################\n"
+					+ "##### Selecione uma opcao:                   #####\n"
+					+ "##### 1 - Cadastrar nova Vacina              #####\n"
+					+ "##### 2 - Consultar uma Vacina               #####\n"
+					+ "##### 3 - Listar Todas Vacinas Cadastradas   #####\n"
+					+ "##### 4 - Alterar uma Vacina                 #####\n"
+					+ "##### 5 - Deletar uma Vacina                 #####\n"
+					+ "##### 0 - Voltar                             #####\n"
+					+ "##################################################"
 			);
 			 op = in.nextInt();
 			switch(op) {
