@@ -1,13 +1,21 @@
 //Lib
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import CarteiraVacinacao.CarteiraVacina;
+import Funcionario.Funcionario;
+import LocalVacinacao.LocalVacinacao;
 import Menu.MenuPessoa;
 import Menu.MenuVacina;
+import Menu.MenuVacinar;
+import Pessoa.Pessoa;
+import Vacina.Vacina;
 import Menu.MenuFuncionario;
 import Menu.MenuLocal;
 // Import class
-import Pessoa.Pessoa;
-import Vacina.Vacina;
+//import Pessoa.Pessoa;
+//import Vacina.Vacina;
 
 public class Main {
 
@@ -17,6 +25,7 @@ public class Main {
 		MenuPessoa pessoa = new MenuPessoa();
 		MenuLocal localVacina = new MenuLocal();
 		MenuFuncionario menuFuncionario = new MenuFuncionario();
+		MenuVacinar vacinar = new MenuVacinar();
 
 		int op = 1;
 		while(op != 0){
@@ -37,6 +46,7 @@ public class Main {
 				+listLocal
 				+listEnfermeiro
 				+listPessoa
+				+"##### 9 - Vacinar                            #####\n"
 				+"##### 0 - Sair                               #####\n"
 				+"##################################################"
 			);
@@ -85,6 +95,19 @@ public class Main {
 						pessoa.listagem();
 					}else{
 						System.out.println("Opcao invalida!");
+					}
+				break;
+				case 9:
+					if(!vacina.isVacina()){
+						System.out.println("Por favor Cadastrar uma Vacina!");
+					} else if(!localVacina.isLocalVacina()){
+						System.out.println("Por favor Cadastrar um Local de Vacinacao!");
+					} else if(!menuFuncionario.isFuncionario()){
+						System.out.println("Por favor Cadastrar um Funcionario!");
+					} else if(!pessoa.isPessoa()){
+						System.out.println("Por favor Cadastrar uma Pessoa!");
+					} else {
+						vacinar.getMenu();
 					}
 				break;
 				default:

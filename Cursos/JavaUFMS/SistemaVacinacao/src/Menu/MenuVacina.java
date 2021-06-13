@@ -35,33 +35,33 @@ public class MenuVacina implements Menu{
 			switch(op) {
 				case 1: 
 					// Cadastrar
-					System.out.println("----- Cadastrar Vacinas -----");
+					System.out.println("################ Cadastrar Vacinas ###############");
 					cadastrar();
-					System.out.println("---------------");
+					System.out.println("##################################################\n");
 				break;
 				case 2: 
 					// Consultar
-					System.out.println("----- Consultar Vacinas -----");
+					System.out.println("################ Consultar Vacinas ###############");
 					consultar();
-					System.out.println("---------------");
+					System.out.println("##################################################\n");
 				break;
 				case 3: 
 					// Listar
-					System.out.println("----- Listar Vacinas -----");
+					System.out.println("################# Listar Vacinas #################");
 					listagem();
-					System.out.println("---------------");
+					System.out.println("##################################################\n");
 				break;
 				case 4:
 					// Alterar
-					System.out.println("----- Alterar Vacinas -----");
+					System.out.println("################# Alterar Vacina #################");
 					alterar();
-					System.out.println("---------------");
+					System.out.println("##################################################\n");
 				break;
 				case 5:
 					// Deletar
-					System.out.println("----- Deletar Vacinas -----");
+					System.out.println("################# Deletar Vacinas ################");
 					deletar();
-					System.out.println("---------------");
+					System.out.println("##################################################\n");
 				break;
 				case 99:
 					popular();
@@ -121,12 +121,12 @@ public class MenuVacina implements Menu{
 			System.out.println("Nao Existe Vacina cadastrada para Consultar!");
 			return;
 		}
-		System.out.println("----- Qual o Nome da Vacina que deseja Consultar? -----");
-		System.out.println("----- Informe o Nome da Vacina! -----");
+		System.out.println("##### Qual o Nome da Vacina que deseja Consultar? #####");
+		System.out.println("############### Informe o Nome da Vacina! #############");
 				
 		String nomeVacina = in.next();
 		for (Vacina v : listVacina) {
-			if(v.getNomeVacina().equals(nomeVacina.toUpperCase())){
+			if(v.getNomeVacina().toUpperCase().equals(nomeVacina.toUpperCase())){
 				System.out.println(v.toString());
 			}
 		}
@@ -150,27 +150,28 @@ public class MenuVacina implements Menu{
 			return;
 		}
 		int temVacina = 0;
-		System.out.println("----- Qual o Nome da Vacina que deseja alterar? -----");
+		System.out.println("##### Qual o Nome da Vacina que deseja alterar? #####");
 		listagem();
-		System.out.println("----- Informe o Nome da Vacina! -----");
+		System.out.println("############## Informe o Nome da Vacina! ##@@########");
 				
 		String nomeVacina = in.next();
 		for (Vacina v : listVacina) {
-			if(v.getNomeVacina().equals(nomeVacina.toUpperCase())){
+			if(v.getNomeVacina().toUpperCase().equals(nomeVacina.toUpperCase())){
 				temVacina = 1;
 				System.out.println(v.getNomeVacina());
 				int op = 1;
 				
 				while(op != 0){
-					System.out.println("Seleciona o que deseja alterar!\n"
-						+"1 - Nome Vacina:\n"
-						+"2 - Fabricante:\n"
-						+"3 - Duracao:\n"
-						+"4 - Idade Minima:\n"
-						+"5 - Quantidade de doses:\n"
-						+"6 - Eficacia:\n"
-						+"7 - Restricoes:\n"
-						+"0 - Sair");
+						System.out.println("################# Seleciona o que deseja alterar! #################\n"
+						+"##### 1 - Nome Vacina:                                   ##########\n"                                
+						+"##### 2 - Fabricante:                                    ##########\n"
+						+"##### 3 - Duracao:                                       ##########\n"
+						+"##### 4 - Idade Minima:                                  ##########\n"
+						+"##### 5 - Quantidade de doses:                           ##########\n"
+						+"##### 6 - Eficacia:                                      ##########\n"
+						+"##### 7 - Restricoes:                                    ##########\n"
+						+"##### 0 - Sair                                           ##########\n"
+						+"###################################################################\n");
 					op = in.nextInt();
 					in.nextLine();
 					
@@ -232,17 +233,17 @@ public class MenuVacina implements Menu{
 			return;
 		}
 		int quantidadeDeletada = listVacina.size();
-		System.out.println("----- Informe o Nome da Vacina para deletar! -----");
+		System.out.println("##### Informe o Nome da Vacina para deletar! #####");
 		String nomeVacina = in.next();
 		for (Vacina v : listVacina) {
-			if(v.getNomeVacina().equals(nomeVacina.toUpperCase())){
+			if(v.getNomeVacina().toUpperCase().equals(nomeVacina.toUpperCase())){
 				listVacina.remove(v);
-				System.out.println("----- Vacina deletada! -----");
+				System.out.println("##### Vacina deletada! #####");
 				break;
 			}
 		}
 		if (quantidadeDeletada == listVacina.size()) {
-			System.out.println("----- Vacina nao encontrada! -----");
+			System.out.println("##### Vacina nao encontrada! #####");
 		}	
 	}
 
@@ -250,15 +251,14 @@ public class MenuVacina implements Menu{
 	public void popular() {
 		listVacina.add( new Vacina("CORONAVAC", "CHINA", 1, 18, 2, 57, "restricoes"));
 		listVacina.add( new Vacina("ASTRAZENECA", "fabricante", 1, 18, 2, 67, "restricoes"));
-		listVacina.add( new Vacina("Covaxin", "Bharat Biotech", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("Sputnik V", "RUSSIA", 1, 18, 2, 92, "restricoes"));
-		listVacina.add( new Vacina("Vacina de Oxford", "Universidade de Oxford", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("Moderna", "EUA", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("Vacina da Pfizer", "Estados Unidos e Alemanha", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("Sinopharm", "CHINA", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("CanSino", "CHINA", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("Johnson", "EUA", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("Novavax", "EUA", 1, 18, 2, 57, "restricoes"));
-		listVacina.add( new Vacina("CanSino", "CHINA", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("COVAXIN", "Bharat Biotech", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("SPUTNIK V", "RUSSIA", 1, 18, 2, 92, "restricoes"));
+		listVacina.add( new Vacina("OXFORD", "Universidade de Oxford", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("MODERNA", "EUA", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("PFIZER", "Estados Unidos e Alemanha", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("SINOPHARM", "CHINA", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("CANSINO", "CHINA", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("JANSSEN", "Johnson", 1, 18, 2, 57, "restricoes"));
+		listVacina.add( new Vacina("NOVAVAX", "EUA", 1, 18, 2, 57, "restricoes"));
 	}
 }

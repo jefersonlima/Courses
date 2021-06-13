@@ -24,45 +24,47 @@ public class MenuFuncionario implements Menu{
 		int op = 1;
 		while(op != 0) {
 			System.out.println(
-					"Selecione uma opcao:\n"
-					+ "1 - Cadastrar novo Funcionario\n"
-					+ "2 - Consultar um Funcionario\n"
-					+ "3 - Listar Todas Funcionarios Cadastradas \n"
-					+ "4 - Alterar um Funcionario\n"
-					+ "5 - Deletar um Funcionario\n"
-					+ "0 - Voltar"
+					  "################ Selecione uma opcao: ################\n"
+					+ "##### 1 - Cadastrar novo Funcionario             #####\n"
+					+ "##### 2 - Consultar um Funcionario               #####\n"
+					+ "##### 3 - Listar Todas Funcionarios Cadastradas  #####\n"
+					+ "##### 4 - Alterar um Funcionario                 #####\n"
+					+ "##### 5 - Deletar um Funcionario                 #####\n"
+					+ "##### 0 - Voltar                                 #####\n"
+					+ "######################################################"
 			);
 			 op = in.nextInt();
 			switch(op) {
 				case 1: 
 					// Cadastrar
-					System.out.println("----- Cadastrar Funcionario -----");
+					System.out.println("##### Cadastrar Funcionario #####");
 					cadastrar();
-					System.out.println("---------------");
+					System.out.println("#################################");
 				break;
 				case 2: 
 					// Consultar
-					System.out.println("----- Consultar Funcionarios -----");
+					System.out.println("################## Consultar Funcionarios ##################");
 					consultar();
-					System.out.println("---------------");
+					System.out.println("############################################################");
 				break;
 				case 3: 
 					// Listar
-					System.out.println("----- Listar Funcionarios -----");
+					System.out.println("########## Lista de Funcionarios #########");
 					listagem();
-					System.out.println("---------------");
+					System.out.println("\n###### Fim da lista de Funcionarios ######");
+					System.out.println("##########################################\n");
 				break;
 				case 4:
 					// Alterar
-					System.out.println("----- Alterar Funcionario -----");
+					System.out.println("####################### Alterar Funcionario ######################");
 					alterar();
-					System.out.println("---------------");
+					System.out.println("##################################################################");
 				break;
 				case 5:
 					// Deletar
-					System.out.println("----- Deletar Funcionario -----");
+					System.out.println("##### Deletar Funcionario #####");
 					deletar();
-					System.out.println("---------------");
+					System.out.println("###############################\n");
 				break;
 				case 99:
 					popular();
@@ -93,7 +95,7 @@ public class MenuFuncionario implements Menu{
 		System.out.println("Informe o numero de celular:");
 		String celular = in.nextLine();
 
-		System.out.println("----- Cadastro de Endereco -----");
+		System.out.println("##### Cadastro de Endereco #####");
 		System.out.println("Informe a rua:");
 		String rua = in.nextLine();
 
@@ -154,7 +156,7 @@ public class MenuFuncionario implements Menu{
 
 		funcionario = new Funcionario(nome, idade, sexo, cpf, celular, endereco, profissao, comorbidade, raca, gestante, codMatricula);
 		listFuncionario.add(funcionario);
-		System.out.println("----- Pessoa cadastrada com sucesso! -----");
+		System.out.println("##### Funcionario cadastrada com sucesso! #####");
 	}
 
 	@Override
@@ -163,13 +165,13 @@ public class MenuFuncionario implements Menu{
 			System.out.println("Nao Existe Funcionario cadastrado para Consultar!");
 			return;
 		}
-		System.out.println("----- Qual o Nome da funcionario que deseja Consultar? -----");
-		System.out.println("----- Informe o Nome do Funcionario! -----");
+		System.out.println("##### Qual o Nome da funcionario que deseja Consultar? #####");
+		System.out.println("############### Informe o Nome do Funcionario! #############");
 				
 		String nomeFuncionario = in.next();
-		for (Funcionario v : listFuncionario) {
-			if(v.getNome().equals(nomeFuncionario.toUpperCase())){
-				System.out.println(v.toString());
+		for (Funcionario f : listFuncionario) {
+			if(f.getNome().toUpperCase().equals(nomeFuncionario.toUpperCase())){
+				System.out.println(f.toString());
 			}
 		}
 	}
@@ -188,24 +190,25 @@ public class MenuFuncionario implements Menu{
 	@Override
 	public void alterar() {
 		if (listFuncionario.size() == 0) {
-			System.out.println("Nao a pessoas para alterar!");
+			System.out.println("########## Nao a pessoas para alterar! ##########");
 			return;
 		}
-		System.out.println("----- Qual cadastro deseja alterar? -----");
-		System.out.println("----- Informe o cpf que deseja alterar o cadastro! -----");
+		System.out.println("################## Qual cadastro deseja alterar? #################");
+		System.out.println("########## Informe o cpf que deseja alterar o cadastro! ##########");
 		String cpfIn = in.next();
 		for (Pessoa p : listFuncionario) {
 			if(p.getCpf().equals(cpfIn)){
-				System.out.println(p.getNome());
+		System.out.println("############## Funcionario Encontrado: " + p.getNome());
 				int op = 1;
 				while(op != 0){
-					System.out.println("Seleciona oque deseja alterar!\n"
-						+"1 - Endereco:\n"
-						+"2 - Idade:\n"
-						+"3 - Celular:\n"
-						+"4 - Profissao:\n"
-						+"5 - Comorbidade:\n"
-						+"0 - Sair");
+		System.out.println("################# Seleciona o que deseja alterar! ################\n"
+						+"##### 1 - Endereco:\n"
+						+"##### 2 - Idade:\n"
+						+"##### 3 - Celular:\n"
+						+"##### 4 - Profissao:\n"
+						+"##### 5 - Comorbidade:\n"
+						+"##### 0 - Sair\n"
+						+"##################################################################");
 					op = in.nextInt();
 					in.nextLine();
 
@@ -258,25 +261,25 @@ public class MenuFuncionario implements Menu{
 				}
 			}
 		}
-		System.out.println("----- CPF nao encontrado! -----");	
+		System.out.println("##### CPF nao encontrado! #####");	
 	}
 
 	@Override
 	public void deletar() {
 		if(listFuncionario.size() == 0){
-			System.out.println("Não existem funcionarios para deletar!");
+			System.out.println("Nao existem funcionarios para deletar!");
 			return;
 		}
-		System.out.println("----- Informe o CPF para deletar! -----");
+		System.out.println("##### Informe o CPF para deletar! #####");
 		String cpfIn = in.next();
 		for (Funcionario p : listFuncionario) {
 			if(p.getCpf().equals(cpfIn)){
 				listFuncionario.remove(p);
-				System.out.println("----- funcionarios deletadu! -----");
+				System.out.println("##### funcionarios deletado! #####");
 				break;
 			}
 		}
-		System.out.println("----- funcionarios nao encontrado! -----");
+		System.out.println("##### funcionarios nao encontrado! #####");
 	}
 
 	@Override
@@ -285,12 +288,12 @@ public class MenuFuncionario implements Menu{
 		// Enderecos
 		endereco.add( new Endereco("Rua Ayrton Senna", 114, "Belo Jardim II", "Rio Branco","69908032"));
 		endereco.add( new Endereco("Rua Via Firenze", 192, "Jardim Vila Paradiso", "Indaiatuba","13331563"));
-		endereco.add( new Endereco("ServidÃ£o Nove de Novembro", 945, "Retiro", "Volta Redonda","27277212"));
+		endereco.add( new Endereco("Servidao Nove de Novembro", 945, "Retiro", "Volta Redonda","27277212"));
 		endereco.add( new Endereco("Rua Quatro", 772, "Quintas Coloniais", "Contagem","32044480"));
 
 		// Pessoas
 		listFuncionario.add(new Funcionario("Gilson Jose do Santos", 26, 'M', "87025384828", "(67) 99459-3797", endereco.get(0), "Designer", false, "Pardo", false, 0));
-		listFuncionario.add(new Funcionario("Jeferson", 65, 'M', "70429878109", "(83) 99940-1105", endereco.get(1), "Professor", false, "Preto", false, 1));
+		listFuncionario.add(new Funcionario("Jeferson", 65, 'M', "98765432100", "(83) 99940-1105", endereco.get(1), "Professor", false, "Preto", false, 1));
 		listFuncionario.add(new Funcionario("Henrique Theo Guilherme Rezende", 65, 'M', "54058291451", "(68)99164-9104", endereco.get(2), "Professor", true, "Branco", false, 2));
 		listFuncionario.add(new Funcionario("Isadora", 50, 'F', "45457869369", "(62) 98528-9986", endereco.get(3), "Professor", false, "Parda", true, 3));	
 	}

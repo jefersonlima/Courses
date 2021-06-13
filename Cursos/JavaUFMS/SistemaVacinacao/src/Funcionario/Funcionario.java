@@ -22,9 +22,9 @@ public class Funcionario extends Pessoa{
 	}
 	@Override
 	public String toString() {
-		return "\nFuncionario:" +
-				"\nMatricula: " + codMatricula + 
-				"\nNome:" + getNome() + 
-				"\nProfissao: "+ getProfissao();
+		return "\n##### Funcionario:" +
+				"\n##### Matricula: " + codMatricula + 
+				"\n##### Nome:" + getNome() + 
+				"\n##### Profissao: "+ getProfissao();
 	}
 }

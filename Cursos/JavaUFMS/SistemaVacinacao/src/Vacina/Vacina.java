@@ -91,12 +91,12 @@ public class Vacina {
 	public String toString() {
 		return "Vacina:" +
 				//"\nCodigo Vacina: " + codVacina + 
-				"\nNome Vacina: " + nomeVacina + 
-				"\nFabricante: " + fabricante + 
-				"\nDuracao em Meses: " + duracao + 
-				"\nIdade Minima: " + idadeMinima + 
-				"\nQuantidade de Doses: " + dose + 
-				"\nEficacia em: " + eficacia + "%" +
-				"\nRestrições: "	+ restricoes + "\n";
+				"\n##### Nome Vacina: " + nomeVacina + 
+				"\n##### Fabricante: " + fabricante + 
+				"\n##### Duracao em Meses: " + duracao + 
+				"\n##### Idade Minima: " + idadeMinima + 
+				"\n##### Quantidade de Doses: " + dose + 
+				"\n##### Eficacia em: " + eficacia + "%" +
+				"\n##### Restricoes: "	+ restricoes + "\n";
 	}		
 }
