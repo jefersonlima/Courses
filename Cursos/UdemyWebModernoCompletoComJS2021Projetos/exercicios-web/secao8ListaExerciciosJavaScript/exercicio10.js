@@ -3,16 +3,15 @@
 ou false.
 */
 
-function divisivelPorTres(numero){
-    if (numero % 3 === 0){
-        return true
-    }else{
-        return false
-    }
+function divisivelPorTres(numero) {
+  if (numero % 3 === 0) {
+    return true;
+  }
+  return false;
 }
 
-console.log(divisivelPorTres(3))
-console.log(divisivelPorTres(33))
-console.log(divisivelPorTres(333))
-console.log(divisivelPorTres(38))
-console.log(divisivelPorTres(337))
+console.log(divisivelPorTres(3));
+console.log(divisivelPorTres(33));
+console.log(divisivelPorTres(333));
+console.log(divisivelPorTres(38));
+console.log(divisivelPorTres(337));

@@ -7,18 +7,17 @@ que os resultados sejam iguais. Caso o delta seja negativo, retorne, ao invés d
 “Delta é negativo”.
 */
 
-function baskara(a, b, c){
-    let delta = b**2 - 4 * a * c
-    if (delta < 0){
-        return 'Delta é negativo: ' + delta
-    }else{
-        x1 = (-b + Math.sqrt(delta)) / 2 * a
-        x2 = (-b - Math.sqrt(delta)) / 2 * a
-        
-        let vet = [x1, x2]
-        return vet
-    }
+function baskara(a, b, c) {
+  const delta = b ** 2 - 4 * a * c;
+  if (delta < 0) {
+    return `Delta é negativo: ${delta}`;
+  }
+  x1 = (-b + Math.sqrt(delta)) / 2 * a;
+  x2 = (-b - Math.sqrt(delta)) / 2 * a;
+
+  const vet = [x1, x2];
+  return vet;
 }
 
-console.log(baskara(3,-5,12))
-console.log(baskara(1,12,-13)) // [1, -13]
+console.log(baskara(3, -5, 12));
+console.log(baskara(1, 12, -13)); // [1, -13]

@@ -1,8 +1,8 @@
-console.log("Sentença de código")
+console.log('Sentença de código');
 
 {
-    {
-        console.log("Olá");
-        console.log('Mundo!')  // Padrão do Curso
-    }
+  {
+    console.log('Olá');
+    console.log('Mundo!'); // Padrão do Curso
+  }
 }

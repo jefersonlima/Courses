@@ -3,22 +3,22 @@
 dia. Considere que domingo é o dia 1 e sábado é o dia 7. Utilize a estrutura Switch.
 */
 
-function geraNumeroAleatorio(){
-    const dia = Math.random() * (7 - 1) + 1
-    return Math.floor(dia)
+function geraNumeroAleatorio() {
+  const dia = Math.random() * (7 - 1) + 1;
+  return Math.floor(dia);
 }
 
-function verificaDiaUtil(dia){
-    switch (dia){
-        case 1: case 7:
-            return 'Fim de Semana ' + dia
-            break
-        case 2: case 3: case 4: case 5: case 6:
-            return 'Dia util ' + dia
-            break
-        default:
-            return 'dia inválido ' + dia
-    }
+function verificaDiaUtil(dia) {
+  switch (dia) {
+    case 1: case 7:
+      return `Fim de Semana ${dia}`;
+      break;
+    case 2: case 3: case 4: case 5: case 6:
+      return `Dia util ${dia}`;
+      break;
+    default:
+      return `dia inválido ${dia}`;
+  }
 }
 
-console.log(verificaDiaUtil(geraNumeroAleatorio()))
+console.log(verificaDiaUtil(geraNumeroAleatorio()));

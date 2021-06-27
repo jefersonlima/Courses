@@ -12,27 +12,28 @@ Retorno: [3, 7] (Significa que ele bateu três vezes seu recorde de melhor pontu
 aconteceu no sétimo jogo.)
 */
 
-function recorde(pontosPartidas){
-    let record = pontosPartidas[0]
-    let piorRecord = pontosPartidas[0]
-    let contadorRecord = 0, posicaoPiorRecord = 0
-    for (let i = 0; i < pontosPartidas.length; i++){
-        if (i != 0 && pontosPartidas[i] > record){
-            contadorRecord ++
-            record = pontosPartidas[i] 
-        }
-        if(pontosPartidas[i] < piorRecord){
-            piorRecord = pontosPartidas[i]
-            posicaoPiorRecord = i
-        }
+function recorde(pontosPartidas) {
+  let record = pontosPartidas[0];
+  let piorRecord = pontosPartidas[0];
+  let contadorRecord = 0; let
+    posicaoPiorRecord = 0;
+  for (let i = 0; i < pontosPartidas.length; i++) {
+    if (i != 0 && pontosPartidas[i] > record) {
+      contadorRecord++;
+      record = pontosPartidas[i];
     }
+    if (pontosPartidas[i] < piorRecord) {
+      piorRecord = pontosPartidas[i];
+      posicaoPiorRecord = i;
+    }
+  }
 
-    return [contadorRecord, posicaoPiorRecord + 1]
+  return [contadorRecord, posicaoPiorRecord + 1];
 }
-let pontosPartidas
+let pontosPartidas;
 
-pontosPartidas = [10, 20, 20, 8, 25, 3, 0, 30, 1]
-console.log(recorde(pontosPartidas))
+pontosPartidas = [10, 20, 20, 8, 25, 3, 0, 30, 1];
+console.log(recorde(pontosPartidas));
 
-//pontosPartidas = [10, 20, 20, 8, 25, 6, 4, 30, 1, 31, 0, 35]
-//console.log(recorde(pontosPartidas))
+// pontosPartidas = [10, 20, 20, 8, 25, 6, 4, 30, 1, 31, 0, 35]
+// console.log(recorde(pontosPartidas))
