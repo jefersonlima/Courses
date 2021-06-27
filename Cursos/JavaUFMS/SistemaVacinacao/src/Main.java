@@ -29,10 +29,11 @@ public class Main {
 
 		int op = 1;
 		while(op != 0){
-			String listVacina = vacina.isVacina() ? "##### 5 - Listar vacinas                     #####\n" : "";
-			String listLocal = localVacina.isLocalVacina() ? "##### 6 - Listar local de vacinas            #####\n" : "";
-			String listEnfermeiro = menuFuncionario.isFuncionario() ? "##### 7 - Listar enfermeiros                 #####\n" : "";
-			String listPessoa = pessoa.isPessoa() ? "##### 8 - Listar pessoas                     #####\n" : "";
+			String listVacina = vacina.isVacina() ? "##### 6 - Listar vacinas                     #####\n" : "";
+			String listLocal = localVacina.isLocalVacina() ? "##### 7 - Listar local de vacinas            #####\n" : "";
+			String listEnfermeiro = menuFuncionario.isFuncionario() ? "##### 8 - Listar enfermeiros                 #####\n" : "";
+			String listPessoa = pessoa.isPessoa() ? "##### 9 - Listar pessoas                     #####\n" : "";
+			String listaCarteiraVacinar = vacina.isVacina() & localVacina.isLocalVacina() & menuFuncionario.isFuncionario() & pessoa.isPessoa() ? "##### 5 - Carteira de Vacinação              #####\n" : "";
 
 			System.out.println(
 				"##################################################\n"
@@ -42,11 +43,11 @@ public class Main {
 				+"##### 2 - Local                              #####\n"
 				+"##### 3 - Enfermeiros                        #####\n"
 				+"##### 4 - Pessoas                            #####\n"
+				+listaCarteiraVacinar
 				+listVacina
 				+listLocal
 				+listEnfermeiro
 				+listPessoa
-				+"##### 9 - Vacinar                            #####\n"
 				+"##### 0 - Sair                               #####\n"
 				+"##################################################"
 			);
@@ -69,35 +70,14 @@ public class Main {
 					// Pessoas
 					pessoa.getMenu();
 				break;
-				case 5:
+				case 6:
 					if(vacina.isVacina()){
 						vacina.listagem();
 					}else{
 						System.out.println("Opcao invalida!");
 					}
 				break;
-				case 6:
-					if(localVacina.isLocalVacina()){
-						localVacina.listagem();
-					}else{
-						System.out.println("Opcao invalida!");
-					}
-				break;
-				case 7:
-					if(menuFuncionario.isFuncionario()){
-						menuFuncionario.listagem();
-					}else{
-						System.out.println("Opcao invalida!");
-					}
-				break;
-				case 8:
-					if(pessoa.isPessoa()){
-						pessoa.listagem();
-					}else{
-						System.out.println("Opcao invalida!");
-					}
-				break;
-				case 9:
+				case 5:
 					if(!vacina.isVacina()){
 						System.out.println("Por favor Cadastrar uma Vacina!");
 					} else if(!localVacina.isLocalVacina()){
@@ -107,7 +87,29 @@ public class Main {
 					} else if(!pessoa.isPessoa()){
 						System.out.println("Por favor Cadastrar uma Pessoa!");
 					} else {
+						vacinar.setMenuAll(vacina,pessoa,localVacina,menuFuncionario);
 						vacinar.getMenu();
+					}
+				break;
+				case 7:
+					if(localVacina.isLocalVacina()){
+						localVacina.listagem();
+					}else{
+						System.out.println("Opcao invalida!");
+					}
+				break;
+				case 8:
+					if(menuFuncionario.isFuncionario()){
+						menuFuncionario.listagem();
+					}else{
+						System.out.println("Opcao invalida!");
+					}
+				break;
+				case 9:
+					if(pessoa.isPessoa()){
+						pessoa.listagem();
+					}else{
+						System.out.println("Opcao invalida!");
 					}
 				break;
 				default:
