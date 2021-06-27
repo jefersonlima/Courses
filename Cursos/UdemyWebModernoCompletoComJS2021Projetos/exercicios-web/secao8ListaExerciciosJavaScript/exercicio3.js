@@ -1,10 +1,10 @@
-function gerarValorAleatorio(){
-    const valor = Math.random() * (5 - 1) +1
-    return Math.floor(valor)
+function gerarValorAleatorio() {
+  const valor = Math.random() * (5 - 1) + 1;
+  return Math.floor(valor);
 }
 
-function exponenciacao(base, expoente){
-    return 'Base: ' + base + ' elevado a potencia: '+ expoente + ' e igual ' + base ** expoente
+function exponenciacao(base, expoente) {
+  return `Base: ${base} elevado a potencia: ${expoente} e igual ${base ** expoente}`;
 }
 
-console.log(exponenciacao(gerarValorAleatorio(),gerarValorAleatorio()))
+console.log(exponenciacao(gerarValorAleatorio(), gerarValorAleatorio()));

@@ -8,26 +8,24 @@ arredondamento pois esta nota resulta na reprovação do aluno. Por exemplo, a n
 seja, que evite a reprovação do aluno. No caso de a nota ser 38, o arredondamento é possível pois atingirá 40
 e o aluno será aprovado.
 */
-const notaCorte = 40
-function verificaAprovacao(nota){
-    if ((nota + 2) < notaCorte){
-        return 'Reprovado nota: ' + nota
-    }else{
-        return arredondaNota(nota)
-    }
+const notaCorte = 40;
+function verificaAprovacao(nota) {
+  if ((nota + 2) < notaCorte) {
+    return `Reprovado nota: ${nota}`;
+  }
+  return arredondaNota(nota);
 }
 
-function arredondaNota(nota){
-    nota1 = nota
-    nota1 = Math.floor(nota1/5)
-    nota1 = (nota1 + 1) * 5
-    if ((nota + 3) > nota1) {
-        return 'nota: '+ nota +' nota arredondada: ' + nota1
-    }else{
-        return 'nota: ' + nota
-    }
+function arredondaNota(nota) {
+  nota1 = nota;
+  nota1 = Math.floor(nota1 / 5);
+  nota1 = (nota1 + 1) * 5;
+  if ((nota + 3) > nota1) {
+    return `nota: ${nota} nota arredondada: ${nota1}`;
+  }
+  return `nota: ${nota}`;
 }
 
-console.log(verificaAprovacao(29))
-console.log(verificaAprovacao(38))
-console.log(verificaAprovacao(84))
+console.log(verificaAprovacao(29));
+console.log(verificaAprovacao(38));
+console.log(verificaAprovacao(84));

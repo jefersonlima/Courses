@@ -1,15 +1,18 @@
-const moduloA = require('../../moduloA')
-//const moduloA = require('C:/Cursos/Cursos/UdemyWebModernoCompletoComJS2021Projetos/exercicios-web/secao9Node/moduloA.js')
-console.log(moduloA.ola)
+const moduloA = require('../../moduloA');
+// const moduloA = require('C:/Cursos/Cursos/UdemyWebModernoCompletoComJS2021Projetos/exercicios-web/secao9Node/moduloA.js')
+console.log(moduloA.ola);
 
-const saudacao = require('saudacao')
-console.log(saudacao.ola)
+const saudacao = require('saudacao');
 
-const c = require('./pastaC')
-console.log(c.ola2)
+console.log(saudacao.ola);
 
-const http = require('http')
+const c = require('./pastaC');
+
+console.log(c.ola2);
+
+const http = require('http');
+
 http.createServer((req, res) => {
-    res.write('Bom dia!')
-    res.end()
-}).listen(8080)
+  res.write('Bom dia!');
+  res.end();
+}).listen(8080);

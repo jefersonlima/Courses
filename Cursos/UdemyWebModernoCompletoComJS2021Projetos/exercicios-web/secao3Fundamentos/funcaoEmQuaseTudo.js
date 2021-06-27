@@ -1,5 +1,5 @@
-console.log(typeof Object)
+console.log(typeof Object);
 
-class Produto{}
+class Produto {}
 
-console.log(typeof Produto)
+console.log(typeof Produto);

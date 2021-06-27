@@ -5,24 +5,23 @@ numéricos na ordem que foram inseridos. Por exemplo: calculadora (2, ‘+’, 3
 3. Dica: Os sinais das operações são: ‘+’. ‘-’, ‘*’ e ‘/’. Crie um caso default para operações inválidas.
 */
 
-function calculadora(valor1, operacao, valor2){
-    switch(operacao){
-        case operacao = '+':
-            return valor1 + valor2
-        case operacao = '-':
-            return valor1 - valor2
-        case operacao = '*':
-            return valor1 * valor2
-        case operacao = '/':
-            return valor1 / valor2
-        default:
-            return 'Operação inválida'
-
-    }
+function calculadora(valor1, operacao, valor2) {
+  switch (operacao) {
+    case operacao = '+':
+      return valor1 + valor2;
+    case operacao = '-':
+      return valor1 - valor2;
+    case operacao = '*':
+      return valor1 * valor2;
+    case operacao = '/':
+      return valor1 / valor2;
+    default:
+      return 'Operação inválida';
+  }
 }
 
-console.log(calculadora(2, '+', 3))
-console.log(calculadora(2, '-', 3))
-console.log(calculadora(2, '*', 3))
-console.log(calculadora(2, '/', 3))
-console.log(calculadora(2, '%', 3))
+console.log(calculadora(2, '+', 3));
+console.log(calculadora(2, '-', 3));
+console.log(calculadora(2, '*', 3));
+console.log(calculadora(2, '/', 3));
+console.log(calculadora(2, '%', 3));

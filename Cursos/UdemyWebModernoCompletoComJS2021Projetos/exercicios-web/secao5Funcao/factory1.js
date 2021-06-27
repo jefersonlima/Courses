@@ -1,8 +1,8 @@
-function criarPessoa(){
-    return {
-        nome: 'Ana',
-        sobrenome: 'Silva'
-    }
+function criarPessoa() {
+  return {
+    nome: 'Ana',
+    sobrenome: 'Silva',
+  };
 }
 
-console.log(criarPessoa())
+console.log(criarPessoa());

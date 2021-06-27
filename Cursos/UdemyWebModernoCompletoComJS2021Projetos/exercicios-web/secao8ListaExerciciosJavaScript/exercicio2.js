@@ -6,19 +6,18 @@ ao tamanho de seus lados. (Neste exemplo deve-se abstrair as condições matemá
 triângulo).
 */
 
-function gerarNumeroAleatorio(){
-    const valor = Math.random() * (4 - 1) + 1
-    return Math.floor(valor)
+function gerarNumeroAleatorio() {
+  const valor = Math.random() * (4 - 1) + 1;
+  return Math.floor(valor);
 }
 
-function verificaTipoTriangulo(lado1, lado2, lado3){
-    if (lado1 === lado2 && lado1 === lado3){
-        return 'Triangulo formado pelos lados: lado1 = ' + lado1 + ', lado2 = ' + lado2 + ', lado3 = ' + lado3 + ' é Equilátero'
-    }else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3){
-        return 'Triangulo formado pelos lados: lado1 = ' + lado1 + ', lado2 = ' + lado2 + ', lado3 = ' + lado3 + ' é Isósceles'
-    }else{
-        return 'Triangulo formado pelos lados: lado1 = ' + lado1 + ', lado2 = ' + lado2 + ', lado3 = ' + lado3 + ' é Escaleno'
-    }
+function verificaTipoTriangulo(lado1, lado2, lado3) {
+  if (lado1 === lado2 && lado1 === lado3) {
+    return `Triangulo formado pelos lados: lado1 = ${lado1}, lado2 = ${lado2}, lado3 = ${lado3} é Equilátero`;
+  } if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+    return `Triangulo formado pelos lados: lado1 = ${lado1}, lado2 = ${lado2}, lado3 = ${lado3} é Isósceles`;
+  }
+  return `Triangulo formado pelos lados: lado1 = ${lado1}, lado2 = ${lado2}, lado3 = ${lado3} é Escaleno`;
 }
 
-console.log(verificaTipoTriangulo(gerarNumeroAleatorio(), gerarNumeroAleatorio(), gerarNumeroAleatorio()))
+console.log(verificaTipoTriangulo(gerarNumeroAleatorio(), gerarNumeroAleatorio(), gerarNumeroAleatorio()));

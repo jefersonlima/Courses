@@ -5,24 +5,24 @@ escassez de kiwis”. Caso melancia, retorne: “Aqui está, são 3 reais o quil
 também um default, que retornará uma mensagem de erro no console.
 */
 
-function verificaFruta(fruta){
-    try{
-        switch (fruta){
-            case 'maça':
-                return 'Não vendemos esta fruta aqui'
-            case 'kiwi':
-                return 'Estamos com escassez de kiwis'
-            case 'melancia':
-                return 'Aqui está, são 3 reais o quilo'
-            default:
-                throw new UserException();
-        }     
-    }catch (e){
-        return 'fruta invalida'
-    }    
+function verificaFruta(fruta) {
+  try {
+    switch (fruta) {
+      case 'maça':
+        return 'Não vendemos esta fruta aqui';
+      case 'kiwi':
+        return 'Estamos com escassez de kiwis';
+      case 'melancia':
+        return 'Aqui está, são 3 reais o quilo';
+      default:
+        throw new UserException();
+    }
+  } catch (e) {
+    return 'fruta invalida';
+  }
 }
 
-console.log(verificaFruta('maça'))
-console.log(verificaFruta('kiwi'))
-console.log(verificaFruta('melancia'))
-console.log(verificaFruta('pera'))
+console.log(verificaFruta('maça'));
+console.log(verificaFruta('kiwi'));
+console.log(verificaFruta('melancia'));
+console.log(verificaFruta('pera'));

@@ -7,10 +7,10 @@ um exercício simples para mostrar dinheiro sempre da forma correta. Desenvolva 
 que ela receba um valor como 0.30000000000000004 e retorne R$0,30 (observe a vírgula e o ponto).
 */
 
-function converteMoeda(valor){
-    const resultado = valor.toFixed(2)
-    return 'Valor real: ' + valor + '\nValor apos Tratamento: R$' + resultado.replace('.', ',')
+function converteMoeda(valor) {
+  const resultado = valor.toFixed(2);
+  return `Valor real: ${valor}\nValor apos Tratamento: R$${resultado.replace('.', ',')}`;
 }
 
-console.log(converteMoeda(0.30000000000000004))
-console.log(converteMoeda(Math.random()))
+console.log(converteMoeda(0.30000000000000004));
+console.log(converteMoeda(Math.random()));
