@@ -297,15 +297,18 @@ public class MenuPessoa implements Menu {
 		endereco.add(new Endereco("Rua Via Firenze", 192, "Jardim Vila Paradiso", "Indaiatuba", "13331563"));
 		endereco.add(new Endereco("Servidao Nove de Novembro", 945, "Retiro", "Volta Redonda", "27277212"));
 		endereco.add(new Endereco("Rua Quatro", 772, "Quintas Coloniais", "Contagem", "32044480"));
+		endereco.add(new Endereco("Rua doze", 74, "Centro", "Sao Paulo", "32044480"));
 
 		// Pessoas
 		listPessoa.add(new Pessoa("Gilson Jose do Santos", 26, 'M', "87025384828", "(67) 99459-3797", endereco.get(0),
 				"Designer", false, "Pardo", false));
 		listPessoa.add(new Pessoa("Jeferson", 65, 'M', "98765432100", "(83) 99940-1105", endereco.get(1), "Professor",
 				false, "Preto", false));
-		listPessoa.add(new Pessoa("Henrique Theo Guilherme Rezende", 65, 'M', "54058291451", "(68)99164-9104",
-				endereco.get(2), "Professor", true, "Branco", false));
+		listPessoa.add(new Pessoa("Henrique", 65, 'M', "54058291451", "(68) 99164-9104", endereco.get(2), "Professor",
+				true, "Branco", false));
 		listPessoa.add(new Pessoa("Isadora", 50, 'F', "45457869369", "(62) 98528-9986", endereco.get(3), "Professor",
+				false, "Parda", true));
+		listPessoa.add(new Pessoa("Jurema", 30, 'F', "45457869369", "(62) 98528-9986", endereco.get(4), "Professor",
 				false, "Parda", true));
 
 		System.out.println("#####    Itens cadastrados " + listPessoa.size() + "                 #####");

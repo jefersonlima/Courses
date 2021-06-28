@@ -228,8 +228,8 @@ public class MenuLocal implements Menu {
 
 		listaLocalVacina.add(new LocalVacinacao("Guanandizao", endereco.get(0)));
 		listaLocalVacina.add(new LocalVacinacao("Centro", endereco.get(1)));
-		listaLocalVacina.add(new LocalVacinacao("Aero Racho", endereco.get(2)));
-		listaLocalVacina.add(new LocalVacinacao("Itamaraca", endereco.get(3)));
+		listaLocalVacina.add(new LocalVacinacao("Ayrton Senna", endereco.get(2)));
+		listaLocalVacina.add(new LocalVacinacao("Albano Franco", endereco.get(3)));
 
 		System.out.println("#####    Itens cadastrados " + listaLocalVacina.size() + "                 #####");
 	}

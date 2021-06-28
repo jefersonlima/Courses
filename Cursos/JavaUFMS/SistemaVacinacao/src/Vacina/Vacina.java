@@ -1,8 +1,9 @@
 package Vacina;
+// HACK ABSTRAÇÃO
 
 public class Vacina {
-	
-	//private static int codVacina = 0;
+
+	// private static int codVacina = 0;
 	private String nomeVacina;
 	private String fabricante;
 	private Integer duracao;
@@ -10,10 +11,11 @@ public class Vacina {
 	private Integer dose;
 	private Integer eficacia;
 	private String restricoes;
-	
-	public Vacina(String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose, Integer eficacia, String restricoes) {
+
+	public Vacina(String nomeVacina, String fabricante, Integer duracao, Integer idadeMinima, Integer dose,
+			Integer eficacia, String restricoes) {
 		super();
-		//codVacina += 1;
+		// codVacina += 1;
 		this.nomeVacina = nomeVacina;
 		this.fabricante = fabricante;
 		this.duracao = duracao;
@@ -23,13 +25,13 @@ public class Vacina {
 		this.restricoes = restricoes;
 	}
 
-	//public int getCodVacina() {
-	//	return codVacina;
-	//}
+	// public int getCodVacina() {
+	// return codVacina;
+	// }
 
-	//public void setCodVacina(int codVacina) {
-	//	this.codVacina = codVacina;
-	//}
+	// public void setCodVacina(int codVacina) {
+	// this.codVacina = codVacina;
+	// }
 
 	public String getNomeVacina() {
 		return nomeVacina;
@@ -90,13 +92,10 @@ public class Vacina {
 	@Override
 	public String toString() {
 		return "Vacina:" +
-				//"\nCodigo Vacina: " + codVacina + 
-				"\n##### Nome Vacina: " + nomeVacina + 
-				"\n##### Fabricante: " + fabricante + 
-				"\n##### Duracao em Meses: " + duracao + 
-				"\n##### Idade Minima: " + idadeMinima + 
-				"\n##### Quantidade de Doses: " + dose + 
-				"\n##### Eficacia em: " + eficacia + "%" +
-				"\n##### Restricoes: "	+ restricoes + "\n";
-	}		
+		// "\nCodigo Vacina: " + codVacina +
+				"\n##### Nome Vacina: " + nomeVacina + "\n##### Fabricante: " + fabricante
+				+ "\n##### Duracao em Meses: " + duracao + "\n##### Idade Minima: " + idadeMinima
+				+ "\n##### Quantidade de Doses: " + dose + "\n##### Eficacia em: " + eficacia + "%"
+				+ "\n##### Restricoes: " + restricoes + "\n";
+	}
 }

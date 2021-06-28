@@ -16,6 +16,7 @@ public class MenuVacina implements Menu {
 		return listVacina.size() != 0 ? true : false;
 	}
 
+	// HACK POLIMORFISMO
 	@Override
 	public void getMenu() {
 		int op = 1;

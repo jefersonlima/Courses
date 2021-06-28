@@ -1,5 +1,6 @@
 package Interfaces;
 
+//HACK INTERFACE
 public interface Menu {
     void getMenu();
 

@@ -14,6 +14,7 @@ import Endereco.Endereco;
 
 public class MenuVacinar implements Menu {
 	Scanner in = new Scanner(System.in);
+	// HACK COLEÇAO CarteiraVacina
 	List<CarteiraVacina> listaVacinar = new ArrayList<CarteiraVacina>();
 	MenuVacina menuVacina;
 	MenuPessoa menuPessoaVacina;
@@ -140,7 +141,7 @@ public class MenuVacinar implements Menu {
 
 	@Override
 	public void consultar() {
-		// BUG TENTEI IMPLEMENTAR A CONSULTA SEM SUCESSO.
+
 		// if (listaVacinar.size() == 0) {
 		// System.out.println("Nao Cadastros de pessoas Vacinadas para Consultar!");
 		// return;
@@ -172,13 +173,13 @@ public class MenuVacinar implements Menu {
 
 	@Override
 	public void alterar() {
-		// TODO Auto-generated method stub
+		//
 
 	}
 
 	@Override
 	public void deletar() {
-		// TODO Auto-generated method stub
+		//
 
 	}
 
@@ -252,6 +253,8 @@ public class MenuVacinar implements Menu {
 				menuFuncionarioVacinar.listFuncionario.get(2), menuVacina.listVacina.get(2)));
 		listaVacinar.add(new CarteiraVacina(menuLocalVacina.listaLocalVacina.get(3), menuPessoaVacina.listPessoa.get(3),
 				menuFuncionarioVacinar.listFuncionario.get(3), menuVacina.listVacina.get(3)));
+		listaVacinar.add(new CarteiraVacina(menuLocalVacina.listaLocalVacina.get(1), menuPessoaVacina.listPessoa.get(4),
+				menuFuncionarioVacinar.listFuncionario.get(2), menuVacina.listVacina.get(6)));
 
 		System.out.println("#####    Itens cadastrados " + listaVacinar.size() + "                 #####");
 	}
