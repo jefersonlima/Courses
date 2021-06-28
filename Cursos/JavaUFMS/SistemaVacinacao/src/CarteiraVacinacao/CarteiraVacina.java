@@ -9,7 +9,7 @@ import Menu.MenuVacina;
 import Pessoa.Pessoa;
 import Vacina.Vacina;
 
-public class CarteiraVacina{
+public class CarteiraVacina {
 
 	LocalVacinacao localvacinacao;
 	Pessoa pessoa;
@@ -24,14 +24,13 @@ public class CarteiraVacina{
 		this.vacina = vacina;
 	}
 
-	public CarteiraVacina() {}
+	public CarteiraVacina() {
+	}
 
 	@Override
 	public String toString() {
-		return "\nCarteiraVacina:" + 
-				"\nlocal vacinacao: " + localvacinacao + 
-				"\npessoa: " + pessoa + 
-				"\nfuncioanrio: " + funcionario + 
-				"\nvacina: " + vacina;
+		return "\nCarteiraVacina:" + "\nlocal da vacinacao: " + localvacinacao.getNomeLocal() + "\npessoa Vacinada: "
+				+ pessoa.getNome() + "\nfuncionario responsavel pela vacinacao: " + funcionario.getNome()
+				+ "\nnome da vacina usada: " + vacina.getNomeVacina() + "\n";
 	}
 }

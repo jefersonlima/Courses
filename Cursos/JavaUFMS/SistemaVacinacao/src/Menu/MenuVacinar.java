@@ -11,7 +11,6 @@ import LocalVacinacao.LocalVacinacao;
 import Pessoa.Pessoa;
 import Vacina.Vacina;
 import Endereco.Endereco;
-import Funcionario.Funcionario;
 
 public class MenuVacinar implements Menu {
 	Scanner in = new Scanner(System.in);
@@ -52,13 +51,13 @@ public class MenuVacinar implements Menu {
 				case 1:
 					// Cadastrar
 					System.out.println("##################################################\n"
-							+ "#####    Cadastrar                           #####");
+							+ "#####    Cadastrar Vacinacao                 #####");
 					cadastrar();
 					break;
 				case 2:
 					// Listar
 					System.out.println("##################################################\n"
-							+ "#####    Listar                              #####");
+							+ "#####    Listar Todos Vacinados              #####");
 					listagem();
 					break;
 				case 99:
@@ -73,10 +72,10 @@ public class MenuVacinar implements Menu {
 
 	@Override
 	public void cadastrar() {
-		LocalVacinacao localvacinacao;
-		Pessoa pessoaVacinacao;
-		Funcionario funcionarioVacinacao;
-		Vacina vacina;
+		LocalVacinacao localvacinacao = null;
+		Pessoa pessoaVacinacao = null;
+		Funcionario funcionarioVacinacao = null;
+		Vacina vacina = null;
 
 		// Busca um local já cadastrado!
 		try {
@@ -87,7 +86,7 @@ public class MenuVacinar implements Menu {
 				local = in.nextLine();
 				localvacinacao = menuLocalVacina.consultarLocalVacinar(local);
 			}
-			System.out.println(localvacinacao.toString());
+			// System.out.println(localvacinacao.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -101,7 +100,7 @@ public class MenuVacinar implements Menu {
 				pessoa = in.next();
 				pessoaVacinacao = menuPessoaVacina.consultarLocalVacinar(pessoa);
 			}
-			System.out.println(pessoaVacinacao.toString());
+			// System.out.println(pessoaVacinacao.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -115,7 +114,7 @@ public class MenuVacinar implements Menu {
 				funcionario = in.next();
 				funcionarioVacinacao = menuFuncionarioVacinar.consultarFuncionarioVacinar(funcionario);
 			}
-			System.out.println(funcionarioVacinacao.toString());
+			// System.out.println(funcionarioVacinacao.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -129,30 +128,34 @@ public class MenuVacinar implements Menu {
 				vacinaVacinar = in.next();
 				vacina = menuVacina.consultarVacinaVacinar(vacinaVacinar);
 			}
-			System.out.println(vacina.toString());
+			// System.out.println(vacina.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		System.out.println("TUDO CERTO");
-
-		int indexLocalVacina = menuLocalVacina.listaLocalVacina.size();
-		int indexPessoa = menuPessoaVacina.listPessoa.size();
-		int indexFuncionario = menuFuncionarioVacinar.listFuncionario.size();
-		int indexVacina = menuVacina.listVacina.size();
-
-		CarteiraVacina carteira;
-		carteira = new CarteiraVacina(menuLocalVacina.listaLocalVacina.get(indexLocalVacina + 1),
-				menuPessoaVacina.listPessoa.get(indexPessoa + 1),
-				menuFuncionarioVacinar.listFuncionario.get(indexFuncionario + 1),
-				menuVacina.listVacina.get(indexVacina + 1));
+		CarteiraVacina carteira = new CarteiraVacina(localvacinacao, pessoaVacinacao, funcionarioVacinacao, vacina);
 
 		listaVacinar.add(carteira);
 	}
 
 	@Override
 	public void consultar() {
-		// TODO Auto-generated method stub
+		// BUG TENTEI IMPLEMENTAR A CONSULTA SEM SUCESSO.
+		// if (listaVacinar.size() == 0) {
+		// System.out.println("Nao Cadastros de pessoas Vacinadas para Consultar!");
+		// return;
+		// }
+		// System.out.println("##### Qual o CPF que deseja Consultar? #####");
+		// System.out.println("############### Informe o CPF! #############");
+
+		// String cpf = in.next();
+		// for (CarteiraVacina cv : listaVacinar) {
+		// if
+		// (cv.menuPessoaVacina.getNomePessoa.toUpperCase().equals(cpf.toUpperCase())) {
+		// System.out.println(cv.toString());
+		// }
+
+		// }
 
 	}
 

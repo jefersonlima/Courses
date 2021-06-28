@@ -126,7 +126,6 @@ public class MenuLocal implements Menu {
 	public LocalVacinacao consultarLocalVacinar(String nomeLocal) throws Exception {
 		for (LocalVacinacao lv : listaLocalVacina) {
 			if (lv.getNomeLocal().equals(nomeLocal)) {
-				System.out.println("teste" + lv);
 				return lv;
 			}
 		}
